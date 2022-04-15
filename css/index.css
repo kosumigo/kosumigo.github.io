@@ -210,3 +210,6 @@ body {
   border: solid 4px var(--bg);
 }
 */
+a[href] {
+  cursor: pointer;
+}
