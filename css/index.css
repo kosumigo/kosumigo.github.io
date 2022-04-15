@@ -107,6 +107,8 @@ html {
 #body-content {
   padding: 20px;
   height: fit-content;
+  max-width: 1000px;
+  margin: 0px auto;
 }
 .flex-container {
   display: flex;
