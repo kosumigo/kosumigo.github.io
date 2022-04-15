@@ -9,6 +9,7 @@ https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 body,
 * {
   font-family: Lato, sans-serif;
+  text-align: justify;
 }
 /** General (html/body) **/
 :root {
