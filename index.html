@@ -4,69 +4,91 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="img/icon/logo-small-128.png"
-      type="image/x-icon"
-    />
+    <title>Kosumi | Go Lessons</title>
     <link rel="stylesheet" href="css/index.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <title>Kosumi Go School | Home</title>
+    <link rel="shortcut icon" href="img/icon/logo-small-512.png" type="image/x-icon" />
   </head>
   <body>
-    <div id="top-flowover">
-      <div id="top-cover">
-        <a href="./index.html"
-          ><div id="cover-icon">
-            <img src="img/icon/logo-large-256.png" id="kosumi-logo" /></div
-        ></a>
-        <div id="cover-text">
-          <h1 id="title-text">Kosumi</h1>
-          <h2 id="subtitle-text">Go School</h2>
-        </div>
-      </div>
-    </div>
-    <div id="top-menu">
-      <div href="./page" class="menu-item dropdown-list">Classes</div>
-      <div href="./page" class="menu-item">About Us</div>
-      <div href="./page" class="menu-item dropdown-list">Our Team</div>
-      <div href="./page" class="menu-item">Sign Up</div>
-      <div href="./page" class="menu-item">Resources</div>
-    </div>
-    <div id="body-content">
-      <div class="flex-container">
-        <div id="video-container">
-          <iframe
-            id="video-frame"
-            src="https://www.youtube.com/embed/cFVM_hwh56s?rel=0&modestbranding=1&autohide=1&showinfo=0"
-            title="YouTube video player"
-            frameborder="0"
-            showinfo="0"
-            enablejsapi="1"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-          <div id="video-text">
-            Accumsan wisi vel dolores facilisis. Et at amet justo dolor clita et
-            ea elit stet sadipscing sadipscing dolor takimata dolore sit. Kasd
-            sit sadipscing aliquyam ut option accumsan sea dolor dolore. Sit
-            dolor erat tempor eirmod labore no dolor consetetur dolore dolore
-            amet invidunt consequat ipsum congue esse dolor. Kasd eos eu clita
-            dolore dolores labore ea et quod. Magna sit aliquyam.
+    <header>
+      <div id="header-accent-container" nointeract>
+        <div id="header-accent">
+          <div id="top-left-accent" class="accent blur-20 size-20" style="background: #ffb138"></div>
+          <div>
+            <div id="top-left-accent" class="accent blur-35 size-40" style="background: #ffb138"></div>
+            <div id="top-left-accent" class="accent blur-20 size-15" style="background: #ffeb38"></div>
           </div>
         </div>
-        <div id="text-and-image">
-          <div id="container-text">
-            Stet possim et diam. Eos ut rebum kasd amet elitr ipsum at gubergren
-            sea at elit. Assum ipsum takimata velit lorem lorem te. Gubergren
-            praesent liber diam nonumy. Sed nonumy eirmod eirmod molestie at
-            odio feugait invidunt. Tincidunt et ips
+      </div>
+      <div id="header-items">
+        <div id="header-content">
+          <div id="header-text">
+            <div id="page-title" class="text-primary">Kosumi</div>
+            <div id="page-subtitle" class="text-secondary">
+              Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!
+            </div>
           </div>
-          <div id="container-img"></div>
+          <form id="header-actions" name="interest-form" action="mailto:KosumiGo@gmail.com">
+            <input hidden type="text" name="subject" value="Getting Started in Kosumi" /> <input hidden type="text" name="body" />
+            <input id="email-input" type="email" placeholder="Email" />
+            <input id="get-started-btn" class="accented-btn" type="submit" value="Get Started" />
+          </form>
+          <div id="header-stats">
+            <div class="stats-item">
+              <div class="stats-content">12<span class="stats-alt">+</span></div>
+              <div class="stats-unit">Students</div>
+            </div>
+            <div class="stats-item">
+              <div class="stats-content">2 weekly</div>
+              <div class="stats-unit">Lessons</div>
+            </div>
+            <div class="stats-item">
+              <div class="stats-content">1 new</div>
+              <div class="stats-unit">Location(s)</div>
+            </div>
+          </div>
+        </div>
+        <div id="header-graphic"></div>
+      </div>
+      <div spacer></div>
+    </header>
+    <div id="stones-container" nointeract>
+      <img id="stones-img" src="img/Stones.png" alt="Go Stones" />
+    </div>
+    <div id="lower">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        preserveAspectRatio="none"
+        viewBox="0 0 1680 40"
+        class="position-absolute width-full z-1"
+        style="bottom: -1px"
+      >
+        <path d="M0 40h1680V30S1340 0 840 0 0 30 0 30z" fill="var(--secondary-bg)"></path>
+      </svg>
+      <div id="lower-content">
+        <div id="action-card">[Actionable Content]</div>
+        <div id="storyline-nav">
+          <div class="nav-item active">
+            <div class="nav-item-title">Classes</div>
+            <hr />
+          </div>
+          <div class="nav-item">
+            <div class="nav-item-title">Locations</div>
+            <hr />
+          </div>
+          <div class="nav-item">
+            <div class="nav-item-title">About Us</div>
+            <hr />
+          </div>
+        </div>
+        <div id="lower-storyline" class="primary-bg">
+          <div class="accented-text">
+            Learn the best way for
+            <u> you </u>
+          </div>
+          <div class="placeholder">[theres def stuff here wdym]</div>
         </div>
       </div>
-      <footer></footer>
     </div>
   </body>
-  <script src="js/index.js"></script>
 </html>
