@@ -60,6 +60,7 @@ header {
   padding: 80px;
   flex-grow: 1;
   max-width: 900px;
+  z-index: 100000;
 }
 #header-graphic {
   background-image: url(../img/grid.png);
