@@ -97,6 +97,7 @@ header {
 }
 #lower-content {
   background-color: var(--secondary-bg);
+  margin-top: -1px;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -215,6 +216,7 @@ form > * {
   border-radius: 20px 20px 0px 0px;
   overflow: hidden;
   padding: 70px 110px;
+  padding-top: 104px !important;
   background-color: var(--bg);
   background-image: url(../img/accents.svg);
   background-position: center center;
@@ -248,22 +250,6 @@ form > * {
 #lower .placeholder {
   color: var(--lower-accent);
   padding: 20px;
-}
-#action-card {
-  max-width: 600px;
-  width: calc(100% - 40px);
-  padding: 20px;
-  box-sizing: border-box;
-  border: 2px solid var(--secondary-accent);
-  margin-top: 20px;
-  border-radius: 10px;
-  margin: 20px;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  flex-basis: 150px;
-  color: var(--secondary-accent);
 }
 #storyline-nav {
   display: flex;
@@ -323,6 +309,15 @@ form > * {
     border-radius: 0px;
   }
 }
+@media (max-width: 700px) {
+  .accented-text {
+    font-size: 46px;
+    line-height: 50px;
+  }
+  #lower-storyline {
+    padding: 30px 50px;
+  }
+}
 @media (max-width: 500px) {
   #header-items {
     padding: 80px 20px;
@@ -355,4 +350,62 @@ form > * {
     font-size: 20px;
     line-height: 28px;
   }
+}
+#action-card {
+  max-width: 600px;
+  width: calc(100% - 40px);
+  padding: 40px;
+  box-sizing: border-box;
+  border: 2px solid var(--secondary-accent);
+  margin-top: 20px;
+  border-radius: 10px;
+  margin: 20px;
+  display: flex;
+  text-align: center;
+  align-items: start;
+  justify-content: center;
+  flex-flow: column;
+  flex-basis: 150px;
+  color: var(--secondary-accent);
+}
+.action-btn {
+  color: #000000;
+  border: solid 1px transparent;
+  background-color: var(--secondary-bg);
+  padding: 15px 34px;
+  white-space: nowrap;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+}
+.action-btn.primary {
+  border-color: var(--secondary-accent);
+}
+.action-btn:hover {
+  border: solid 1px black;
+  box-shadow: 0px 0px 0px 1px black;
+}
+.action-title {
+  font-size: 24px;
+  color: hsl(54, 21%, 38%);
+  font-weight: 700;
+  margin-bottom: 4px;
+  margin-right: 15px;
+  text-align: left;
+}
+.action-subtitle {
+  font-size: 14px;
+  color: hsl(50, 30%, 42%);
+  margin-bottom: 10px;
+  text-align: left;
+}
+#card-actions {
+  display: flex;
+  flex-flow: column;
+  align-items: start;
+  max-width: 400px;
+  flex-shrink: 0;
+}
+#card-btns {
+  flex-flow: row nowrap;
 }
