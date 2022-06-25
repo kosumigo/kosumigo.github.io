@@ -13,16 +13,22 @@
   --lower-accent: #b2a481;
 }
 
-body,
 html {
   margin: 0px;
   padding: 0px;
-  min-width: 100%;
-  min-height: 100vh;
+  width: 100vw;
+  position: fixed;
   font-family: "Montserrat", sans-serif;
   font-size: 24px;
   font-weight: 400;
   overflow-x: hidden;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  width: 100vw;
+  overflow-y: auto;
+  height: 100vh;
 }
 .primary-bg {
   background-color: var(--bg);
@@ -40,6 +46,9 @@ header,
 #lower > * {
   width: 100%;
   box-sizing: border-box;
+}
+#lower {
+  z-index: 10;
 }
 header {
   background-color: var(--bg);
@@ -77,6 +86,14 @@ header {
   display: flex;
   flex-flow: column;
   align-items: center;
+}
+#lower-content-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  background-color: var(--secondary-bg);
 }
 #lower-content {
   background-color: var(--secondary-bg);
@@ -153,14 +170,16 @@ form > * {
 #header-accent-container {
   width: 0px;
   max-height: initial;
+  overflow-y: hidden;
 }
 #header-accent {
-  height: 100%;
-  width: 100vw;
-  overflow: hidden;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: 1;
+  filter: blur(calc(100px - 1vw));
   opacity: 0.75;
 }
 #email-input {
@@ -177,44 +196,6 @@ form > * {
   color: var(--on-secondary-bg-alt);
 }
 
-.blur-20 {
-  filter: blur(15vw);
-}
-
-.blur-35 {
-  filter: blur(20vw);
-}
-.size-10 {
-  width: 10vw;
-  height: 10vw;
-}
-.size-15 {
-  width: 15vw;
-  height: 15vw;
-}
-
-.size-20 {
-  width: 20vw;
-  height: 20vw;
-}
-
-.size-30 {
-  width: 30vw;
-  height: 30vw;
-}
-
-.size-40 {
-  width: 40vw;
-  height: 40vw;
-}
-/* .accent {
-  opacity: 0.5;
-} */
-.accent {
-  animation: fadeZoomIn 0.5s forwards ease-out;
-  max-width: 200px;
-  max-height: 200px;
-}
 #stones-container {
   height: 0px;
   display: flex;
@@ -234,6 +215,11 @@ form > * {
   border-radius: 20px 20px 0px 0px;
   overflow: hidden;
   padding: 70px 110px;
+  background-color: var(--bg);
+  background-image: url(../img/accents.svg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .stats-item {
   margin: 0 20px;
@@ -255,47 +241,6 @@ form > * {
 .stats-unit {
   color: rgba(255, 255, 255, 0.3);
 }
-@media (max-width: 900px) {
-  #stones-img {
-    width: 150px;
-  }
-  #header-graphic {
-    display: none;
-  }
-  .blur-20 {
-    filter: blur(20vw);
-  }
-
-  .blur-35 {
-    filter: blur(35vw);
-  }
-
-  #lower-content {
-    padding: 0px;
-  }
-  #lower-storyline {
-    border-radius: 0px;
-  }
-}
-@media (max-width: 500px) {
-  #header-items {
-    padding: 80px 20px;
-    max-width: 100%;
-  }
-  #stones-img {
-    transform: scale(0.8);
-  }
-  .blur-20 {
-    filter: blur(30vw);
-  }
-
-  .blur-35 {
-    filter: blur(50vw);
-  }
-  #lower-storyline {
-    padding: 20px 30px;
-  }
-}
 [noiteract] [noiteract] * {
   user-select: none !important;
   pointer-events: none !important;
@@ -306,8 +251,9 @@ form > * {
 }
 #action-card {
   max-width: 600px;
-  width: 100%;
+  width: calc(100% - 40px);
   padding: 20px;
+  box-sizing: border-box;
   border: 2px solid var(--secondary-accent);
   margin-top: 20px;
   border-radius: 10px;
@@ -358,4 +304,55 @@ form > * {
 }
 .nav-item:hover > hr {
   background-color: #0969da;
+}
+.lower-text {
+  font-size: 24px;
+  line-height: 32px;
+}
+@media (max-width: 900px) {
+  #stones-img {
+    width: 150px;
+  }
+  #header-graphic {
+    display: none;
+  }
+  #lower-content {
+    padding: 0px;
+  }
+  #lower-storyline {
+    border-radius: 0px;
+  }
+}
+@media (max-width: 500px) {
+  #header-items {
+    padding: 80px 20px;
+    max-width: 100%;
+  }
+  #stones-img {
+    transform: scale(0.8);
+  }
+
+  #lower-storyline {
+    padding: 20px 30px;
+    padding-top: 104px;
+  }
+  #header-text {
+    text-align: center;
+  }
+  #page-title {
+    font-size: 50px;
+    line-height: 40px;
+  }
+  .accented-text {
+    font-size: 32px;
+    line-height: 36px;
+  }
+  #page-subtitle {
+    font-size: 20px;
+    line-height: 20px;
+  }
+  .lower-text {
+    font-size: 20px;
+    line-height: 28px;
+  }
 }
