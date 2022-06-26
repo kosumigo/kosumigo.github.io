@@ -102,7 +102,8 @@ header {
   flex-flow: column;
   align-items: center;
   flex-grow: 2;
-  padding: 0 50px;
+  padding: 0;
+  box-sizing: border-box;
   max-width: 1200px;
 }
 .text-primary {
@@ -125,6 +126,7 @@ header {
   font-weight: 800;
   font-size: 64px;
   line-height: 78px;
+  max-width: 700px;
 }
 #page-title {
   font-size: 72px;
@@ -216,12 +218,16 @@ form > * {
   border-radius: 20px 20px 0px 0px;
   overflow: hidden;
   padding: 70px 110px;
+  box-sizing: border-box;
   padding-top: 104px !important;
   background-color: var(--bg);
   background-image: url(../img/accents.svg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  width: calc(100vw - 100px);
+  max-width: 100%;
+  box-sizing: border-box;
 }
 .stats-item {
   margin: 0 20px;
@@ -243,10 +249,7 @@ form > * {
 .stats-unit {
   color: rgba(255, 255, 255, 0.3);
 }
-[noiteract] [noiteract] * {
-  user-select: none !important;
-  pointer-events: none !important;
-}
+
 #lower .placeholder {
   color: var(--lower-accent);
   padding: 20px;
@@ -302,12 +305,6 @@ form > * {
   #header-graphic {
     display: none;
   }
-  #lower-content {
-    padding: 0px;
-  }
-  #lower-storyline {
-    border-radius: 0px;
-  }
 }
 @media (max-width: 700px) {
   .accented-text {
@@ -319,6 +316,11 @@ form > * {
   }
 }
 @media (max-width: 500px) {
+  #lower-storyline {
+    padding: 30px 20px;
+    width: 100%;
+    border-radius: 0;
+  }
   #header-items {
     padding: 80px 20px;
     max-width: 100%;
@@ -408,4 +410,13 @@ form > * {
 }
 #card-btns {
   flex-flow: row nowrap;
+}
+#card-graphic {
+}
+#storyline-title {
+  margin-left: 50px;
+}
+[noiteract] [noiteract] * {
+  user-select: none !important;
+  pointer-events: none !important;
 }
