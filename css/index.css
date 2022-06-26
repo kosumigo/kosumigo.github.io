@@ -569,3 +569,8 @@ form > * {
   padding: 0px 0px 0px 5px;
   max-width: calc(100vw - 60px);
 }
+@media (min-width: 900px) {
+  .s-accented-section {
+    margin-left: auto;
+  }
+}
