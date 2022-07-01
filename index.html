@@ -15,28 +15,20 @@
     <meta name="description" content="Conjugate French verbs, learn new tenses, or practice existing ones, all 100% free with VITE! French tools!" />
     <!-- Schema.org for Google -->
     <meta itemprop="name" content="Kosumi Go School" />
-    <meta
-      itemprop="description"
-      content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!"
-    />
+    <meta itemprop="description" content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!" />
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Kosumi Go School" />
-    <meta
-      name="twitter:description"
-      content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!"
-    />
+    <meta name="twitter:description" content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!" />
     <meta name="twitter:image:src" content="https://sander.vonk.one/Kosumi/social-img/social-twitter.png" />
     <!-- Open Graph general (Facebook, Pinterest & Google+) -->
     <meta name="og:title" content="Kosumi Go School" />
-    <meta
-      name="og:description"
-      content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!"
-    />
+    <meta name="og:description" content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!" />
     <meta name="og:image" content="https://sander.vonk.one/Kosumi/social-img/social-og.png" />
     <meta name="og:url" content="https://sander.vonk.one/Kosumi/" />
     <meta name="og:site_name" content="Kosumi | Home" />
     <meta name="og:type" content="website" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
     <header>
@@ -107,71 +99,92 @@
             </div>
           </div>
           <div id="storyline-nav">
-            <div id="classes-section" class="nav-item active">
-              <div class="nav-item-title">Classes</div>
-              <hr />
+            <div id="sections-nav">
+              <li id="locations-section" class="nav-item">
+                <hr class="hidden" />
+                <div class="nav-item-title">Locations</div>
+                <hr />
+              </li>
+              <li id="classes-section" class="nav-item active">
+                <hr class="hidden" />
+                <div class="nav-item-title">Classes</div>
+                <hr />
+              </li>
+              <li id="about-section" class="nav-item">
+                <hr class="hidden" />
+                <div class="nav-item-title">About Us</div>
+                <hr />
+              </li>
             </div>
-            <div id="locations-section" class="nav-item">
-              <div class="nav-item-title">Locations</div>
-              <hr />
-            </div>
-            <div id="about-section" class="nav-item">
-              <div class="nav-item-title">About Us</div>
-              <hr />
-            </div>
+            <!-- <select id="dropdown-nav">
+              <option value="locations-section">Locations</option>
+              <option selected value="classes-section">Classes</option>
+            </select> -->
           </div>
-          <div id="lower-storyline" class="primary-bg">
-            <div id="storyline-title" class="accented-text accented-style">
-              Learn the best way for
-              <u> you </u>
-            </div>
-            <div id="storyline-items">
-              <div class="s-item">
-                <div class="s-sidebar">
-                  <div class="sidebar-marker"></div>
-                  <hr class="sidebar-line" />
-                </div>
-                <div class="s-item-content">
-                  <span class="lower-text">Our student teachers have played Go with the MVHS Go Club since 2020. </span>
-                  <span class="lower-text-alt">We’re dedicated to providing a fun and useful learning experience to you too!</span>
-                </div>
+          <div id="lower-storyline" class="primary-bg" section="classes-section">
+            <div id="storylines-container">
+              <div id="locations-storyline" class="storyline-section">
+                <div class="placeholder accented-style accented-text large-screen-text-center">Map Coming Soon!</div>
               </div>
-            </div>
-            <div class="s-item">
-              <div class="s-sidebar">
-                <div class="sidebar-marker step"></div>
-                <hr class="sidebar-line" />
-              </div>
-              <div class="s-item-expanded">
-                <div class="s-item-content nopad">
-                  <span class="lower-text">We meet in the </span>
-                  <span class="lower-text-alt">Mountain View Public Library</span>
+              <div id="classes-storyline" class="storyline-section">
+                <div id="storyline-title" class="accented-text accented-style">
+                  Learn the best way for
+                  <u> you </u>
                 </div>
-                <div class="s-item-row">
-                  <img class="s-item-img" src="img/go-board.webp" alt="Go Board" />
-                  <div class="s-accented-section accented-text">
-                    <div class="s-item-text accented-style">Engage yourself in applied games</div>
-                    <div class="s-item-subtext">
-                      <span class="lower-text">Don’t just learn the theory behind Go, play it too! </span>
-                      <span class="lower-text-alt">Fun tournaments alongside practice will keep you engaged.</span>
+                <div id="storyline-items">
+                  <div class="s-item">
+                    <div class="s-sidebar">
+                      <div class="sidebar-marker"></div>
+                      <hr class="sidebar-line" />
+                    </div>
+                    <div class="s-item-content">
+                      <span class="lower-text">Our student teachers have played Go with the MVHS Go Club since 2020. </span>
+                      <span class="lower-text-alt">We’re dedicated to providing a fun and useful learning experience to you too!</span>
                     </div>
                   </div>
                 </div>
+                <div class="s-item">
+                  <div class="s-sidebar">
+                    <div class="sidebar-marker step"></div>
+                    <hr class="sidebar-line" />
+                  </div>
+                  <div class="s-item-expanded">
+                    <div class="s-item-content nopad">
+                      <span class="lower-text">We meet in the </span>
+                      <span class="lower-text-alt">Mountain View Public Library</span>
+                    </div>
+                    <div class="s-item-row">
+                      <img class="s-item-img" src="img/go-board.webp" alt="Go Board" />
+                      <div class="s-accented-section accented-text">
+                        <div class="s-item-text accented-style">Engage yourself in applied games</div>
+                        <div class="s-item-subtext">
+                          <span class="lower-text">Don’t just learn the theory behind Go, play it too! </span>
+                          <span class="lower-text-alt">Fun tournaments alongside practice will keep you engaged.</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="s-item">
+                  <div class="s-sidebar">
+                    <div class="sidebar-marker step"></div>
+                  </div>
+                  <div class="s-item-content">
+                    <span class="lower-text">In-depth </span>
+                    <span class="lower-text-alt">group lessons</span>
+                    <span class="lower-text"> let you learn and play with others </span>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="s-item">
-              <div class="s-sidebar">
-                <div class="sidebar-marker step"></div>
-              </div>
-              <div class="s-item-content">
-                <span class="lower-text">In-depth </span>
-                <span class="lower-text-alt">group lessons</span>
-                <span class="lower-text"> let you learn and play with others </span>
+              <div id="about-us-storyline" class="storyline-section">
+                <div class="placeholder accented-style-dark accented-text large-screen-text-center">Content Coming Soon!</div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <footer></footer>
   </body>
+  <script src="js/index.js"></script>
 </html>
