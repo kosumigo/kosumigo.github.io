@@ -532,7 +532,7 @@ form > * {
 #classes-storyline {
 }
 #about-us-storyline {
-  background-color: var(--secondary-bg);
+  background-color: var(--secondary-accent);
 }
 /* #dropdown-nav {
   display: none;
