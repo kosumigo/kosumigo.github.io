@@ -135,7 +135,7 @@ header {
 .accented-style-dark {
   background: linear-gradient(93.8deg, hsl(29, 100%, 45%) 0%, hsl(51, 100%, 45%) 94.44%, hsla(61, 100%, 45%, 0.7) 94.44%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;45
+  -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
   font-weight: 800;
@@ -625,7 +625,8 @@ form > * {
     font-size: 20px;
     line-height: 28px;
   }
-  #storyline-title, .large-screen-text-center {
+  #storyline-title,
+  .large-screen-text-center {
     text-align: center;
     margin-left: 0;
   }
