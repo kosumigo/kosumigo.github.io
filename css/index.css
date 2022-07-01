@@ -449,9 +449,9 @@ form > * {
   margin: 0;
 }
 .s-item-content {
-  width: 550px;
+  max-width: 550px;
 }
-.s-item:not(:last-of-type) > :last-child {
+.s-item:not(:last-of-type) > :last-child, .s-item-content:not(.nopad) {
   padding-bottom: 40px;
 }
 
