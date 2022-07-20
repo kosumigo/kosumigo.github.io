@@ -515,7 +515,7 @@ form > * {
   position: relative;
   transition: left 0.25s ease-out;
 }
-[section="locations-section"] > #storylines-container {
+[section="meetings-section"] > #storylines-container {
   left: 0%;
 }
 [section="classes-section"] > #storylines-container {
@@ -524,7 +524,7 @@ form > * {
 [section="about-section"] > #storylines-container {
   left: -200%;
 }
-#locations-storyline {
+#meetings-storyline {
   /* background-color: var(--bg); */
   /* background-color: var(--secondary-bg); */
 }
@@ -665,4 +665,7 @@ form > * {
   .s-accented-section {
     margin-left: auto;
   }
+}
+[onclick] {
+  cursor: pointer;
 }
