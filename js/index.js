@@ -7,5 +7,5 @@ $("#sections-nav > li").click(function () {
   $("#lower-storyline").attr("section", id);
 });
 $(".footer-item").click(function () {
-  window.location.href = $(this).attr(href);
+  window.location.href = $(this).attr("href");
 });

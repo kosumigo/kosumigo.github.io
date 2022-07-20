@@ -692,12 +692,19 @@ footer {
   font-size: 16px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-.footer-icon {
+.footer-item {
   background-position: center center;
   background-repeat: no-repeat;
+  background-size: 25px;
   height: 100%;
   width: 50px;
 }
 #instagram-link {
   background-image: url(../img/footer/instagram.png);
+}
+#facebook-link {
+  background-image: url(../img/footer/facebook.png);
+}
+footer span {
+  padding: 0 10px;
 }
