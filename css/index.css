@@ -530,9 +530,9 @@ form > * {
 }
 #classes-storyline {
 }
-#about-us-storyline {
+/* #about-us-storyline {
   background-color: var(--secondary-accent);
-}
+} */
 /* #dropdown-nav {
   display: none;
   height: 56px;
