@@ -487,7 +487,8 @@ form > * {
 /** SECTIONS **/
 
 #lower-storyline {
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 20px;
+  margin-bottom: 50px;
   overflow: hidden;
   box-sizing: border-box;
   background-color: var(--bg);
@@ -589,6 +590,7 @@ form > * {
   #lower-storyline {
     width: 100%;
     border-radius: 0;
+    margin-bottom: 0px;
   }
   .storyline-section {
     padding: 30px 20px;
@@ -644,6 +646,15 @@ form > * {
   #storylines-container {
     transition: left 0.15s ease-out;
   }
+  #header-actions {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  #get-started-btn {
+    min-width: 40%;
+  }
 }
 
 .s-item-expanded {
@@ -668,4 +679,25 @@ form > * {
 }
 [onclick] {
   cursor: pointer;
+}
+footer {
+  height: 50px;
+  width: 100%;
+  flex-shrink: 0;
+  background: var(--secondary-accent);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.footer-icon {
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 50px;
+}
+#instagram-link {
+  background-image: url(../img/footer/instagram.png);
 }

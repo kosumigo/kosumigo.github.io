@@ -6,3 +6,6 @@ $("#sections-nav > li").click(function () {
   $("#" + id + "-content").addClass("active");
   $("#lower-storyline").attr("section", id);
 });
+$(".footer-item").click(function () {
+  window.location.href = $(this).attr(href);
+});
