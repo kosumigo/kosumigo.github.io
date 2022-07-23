@@ -13,6 +13,7 @@ class Meeting {
   constructor(json) {
     this.place_name = json.location.name;
     this.time = json.time;
+    this.showbutton = json.showbutton;
     this.location = json.location;
     this.location.query = this.location.query ? this.location.query : `${this.location.latitude},${this.location.longitude}`;
   }
@@ -47,7 +48,7 @@ $("#meetings-section").click(function () {
       $("#meeting-cards").empty();
       for (meeting of data) {
         var m = new Meeting(meeting);
-        $("#meeting-cards").append(m.getHTML());
+        $("#meeting-cards").append(m.getHTML(m.showbutton));
       }
       $(".meeting-map-button").each(function () {
         var thisPopup = $(this);
