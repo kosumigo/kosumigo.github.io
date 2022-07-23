@@ -7,6 +7,8 @@
     <link rel="shortcut icon" href="img/icon/logo-small-64.png" type="image/x-icon" />
     <title>Kosumi Go | Make Meetings JSON</title>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Flow+Rounded&family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;500;700;800;900&family=Consolas:wght@400;500;700&family=Roboto:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap");
+
       :root {
         --bg: #141414;
         --secondary-bg: #ffffff;
@@ -33,6 +35,9 @@
         background-size: cover;
         width: 100vw;
         height: 100vh;
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 400;
       }
       body {
         padding: 20px;
@@ -41,23 +46,200 @@
         width: 100vw;
         height: 100vh;
         display: flex;
-        flex-flow: column;
+        flex-flow: row nowrap;
         align-items: center;
         justify-content: center;
         box-sizing: border-box;
       }
       #page-content {
         padding: 20px;
-        border: solid 2px var(--secondary-accent-transparent);
-        border-radius: 15px;
-        backdrop-filter: blur(20px);
-        background-color: var(--on-secondary-bg-alt);
+        flex-grow: 1;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 550px;
+      }
+      [onclick],
+      button {
+        cursor: pointer;
+      }
+      .meeting-card {
+        background-color: #00000040;
+        backdrop-filter: blur(5px);
+        border-radius: 10px;
+        border: solid 1px var(--secondary-accent-transparent);
+        padding: 15px;
+        width: 100%;
+        flex-shrink: 1;
+        max-width: 400px;
+        flex-grow: 1;
+        color: var(--lower-accent);
+        font-size: 20px;
+        margin: 10px;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+      }
+      .meeting-location {
+        font-weight: bold;
+
+        font-size: 1.25em;
+        margin-bottom: 5px;
+        width: fit-content;
+        padding-right: 10px;
+        border-bottom: solid 2px rgba(0, 0, 0, 0);
+      }
+      .meeting-location:active,
+      .meeting-location:focus,
+      .meeting-location:hover {
+        border-bottom: solid 2px var(--sidebar-accent);
+      }
+      .meeting-map-button {
+        border-radius: 10px;
+        border: none;
+        height: 40px;
+        font-size: 18px;
+        padding: 10px;
+        max-width: 200px;
+        margin-left: auto;
+      }
+      .accented-btn {
+        background: linear-gradient(to top right, var(--accent1) 0%, var(--accent2) 100%);
+        color: var(--secondary-bg);
+        font-weight: 500;
+      }
+      .accented-style,
+      .accented-style-dark {
+        background: linear-gradient(93.8deg, #ffeb38 0%, #ff8c38 94.44%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        font-weight: 800;
+        max-width: 700px;
+      }
+      .accented-style-dark {
+        background: linear-gradient(93.8deg, hsl(29, 100%, 45%) 0%, hsl(51, 100%, 45%) 94.44%, hsla(61, 100%, 45%, 0.7) 94.44%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        font-weight: 800;
+        max-width: 700px;
+      }
+      .accented-text {
+        font-size: 64px;
+        line-height: 78px;
+      }
+      #map-link-row {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
+      #map-link {
+        flex-grow: 1;
+        flex-shrink: 1;
+        margin-right: 10px;
+        height: 40px;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 20px;
+        text-align: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      #save-button {
+        flex-grow: 1;
+        flex-shrink: 1;
+        height: 40px;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 20px;
+        text-align: left;
+        width: 100px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 18px;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
-    <div id="page-content"></div>
+    <div id="page-content">
+      <div class="page-title accented-text accented-style">Add a Meeting</div>
+      <div class="meeting-card">
+        <div class="meeting-location" contenteditable loadshimmer>Location</div>
+        <div class="meeting-time" loadshimmer>
+          <input type="time" id="start" /> - <input type="time" id="end" /> | <input type="date" id="date" />
+        </div>
+        <div id="map-link-row">
+          <input id="map-link" type="text" placeholder="Paste Google Maps Link Here" />
+          <button loadshimmerbg class="meeting-map-button accented-btn">
+            <span loadshimmerslow class="slowshimmer"
+              ><input type="checkbox" checked id="show-button" /> <label for="show-button">Show Button</label>
+            </span>
+          </button>
+        </div>
+      </div>
+      <button id="save-button" class="accented-btn">SAVE</button>
+    </div>
   </body>
-  <script></script>
+  <script>
+    $("#start").change(function () {
+      $("#end").val($("#start").val());
+      $("#end").attr("min", $("#start").val());
+    });
+    $("#show-button").change(function () {
+      if ($(this).is(":checked")) {
+        $("#map-link").show();
+      } else {
+        $("#map-link").hide();
+      }
+    });
+    $("#map-link").change(function () {
+      try {
+        $(this).val($(this).val().split("/place/")[1].split("/@")[0]);
+      } catch (e) {
+        console.warn("Invalid Google Maps Link; \n", e);
+        $(this).val("");
+        $(this).attr("placeholder", "Invalid Link");
+      }
+    });
+    $("#save-button").click(function () {
+      if ($("#start").val() && $("#end").val() && $("#date").val() && ($("#map-link").val() || !$("#show-button").is(":checked"))) {
+        let startTime = new Date($("#date").val()),
+          endTime = new Date($("#date").val());
+        startTime.setHours($("#start").val().split(":")[0]);
+        startTime.setMinutes($("#start").val().split(":")[1]);
+        endTime.setHours($("#end").val().split(":")[0]);
+        endTime.setMinutes($("#end").val().split(":")[1]);
+        var data = {
+          time: { start: startTime.getTime(), end: endTime.getTime() },
+          location: {
+            name: $(".meeting-location").text(),
+            query: $("#show-button").is(":checked") ? $("#map-link").val() : null,
+          },
+          showbutton: $("#show-button").is(":checked"),
+        };
+        $.getJSON("./data/meetings.json")
+          .then((response) => {
+            response.push(data);
+            console.log(response);
+            window.open(`http://sander.vonk.one/dev/rawviewer.html?${encodeURIComponent(JSON.stringify(response, null, "\t"))}`, "");
+          })
+          .catch((error) => {
+            console.error("Error getting meetings JSON:", error.error);
+          });
+      } else {
+        alert("Looks like some information is missing!");
+      }
+    });
+  </script>
 </html>
