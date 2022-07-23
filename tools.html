@@ -232,7 +232,7 @@
           .then((response) => {
             response.push(data);
             console.log(response);
-            window.open(`http://sander.vonk.one/dev/rawviewer.html?${encodeURIComponent(JSON.stringify(response, null, "\t"))}`, "");
+            window.open(`https://sander.vonk.one/dev/rawviewer.html?${encodeURIComponent(JSON.stringify(response, null, "\t"))}`, "");
           })
           .catch((error) => {
             console.error("Error getting meetings JSON:", error.error);
