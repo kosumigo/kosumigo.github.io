@@ -14,6 +14,7 @@ class Meeting {
     this.place_name = json.location.name;
     this.time = json.time;
     this.location = json.location;
+    this.location.query = this.location.query ? this.location.query : `${this.location.latitude},${this.location.longitude}`;
   }
   formatTime() {
     let time = {
@@ -29,15 +30,14 @@ class Meeting {
       minute: "2-digit",
     })} | ${days[time.start.getDay()]} ${time.start.getMonth() + 1}/${String(time.start.getDate()).padStart(2, "0")}`;
   }
-  getHTML() {
+  getHTML(showButton = true) {
+    let buttonHTML = showButton
+      ? `<button loadshimmerbg class="meeting-map-button accented-btn" href="https://maps.google.com/?q=${this.location.query}"><span loadshimmerslow class="slowshimmer">Open Map</span></button>`
+      : "";
     return `<div class="meeting-card">
         <div class="meeting-location" loadshimmer>${this.place_name}</div>
         <div class="meeting-time" loadshimmer>${this.formatTime(this.time)}</div>
-        <button loadshimmerbg class="meeting-map-button accented-btn" href="https://maps.google.com/?q=${this.location.latitude},${
-      this.location.longitude
-    }">
-          <span loadshimmerslow class="slowshimmer">Open Map</span>
-        </button>
+        ${buttonHTML}
       </div>`;
   }
 }
@@ -56,7 +56,7 @@ $("#meetings-section").click(function () {
           innerWidth: Math.min(600, $(window).width() - 20),
           innerHeight: Math.min(500, $(window).width() - 40),
           opacity: 0.7,
-          href: thisPopup.attr("href") + "&ie=UTF8&t=h&output=embed",
+          href: thisPopup.attr("href") + "&ie=UTF8&t=&output=embed",
         });
       });
       setTimeout(function () {
