@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;500;700;800;900&family=Consolas:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Flow+Rounded&family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;500;700;800;900&family=Consolas:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap");
 
 :root {
   --bg: #141414;
@@ -13,6 +13,10 @@
   --on-secondary-bg-alt: #14141466;
   --lower-accent: #b2a481;
   --sidebar-accent: #6d6142;
+  --shimmer-bg: #b2a481aa;
+  --shimmer-alt: #b2a481;
+  --shimmerbg-bg: #b2a48160;
+  --shimmerbg-alt: #b2a4816a;
 }
 html {
   margin: 0px;
@@ -733,4 +737,33 @@ footer span {
   font-size: 18px;
   padding: 10px 20px;
   margin-top: 10px;
+}
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+[loadshimmer],
+[loadshimmerslow] {
+  background: linear-gradient(to right, var(--shimmer-bg) 4%, var(--shimmer-alt) 25%, var(--shimmer-bg) 36%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 12s linear infinite;
+  font-family: "Flow Rounded", sans-serif;
+}
+[loadshimmerbg] {
+  background: linear-gradient(to right, var(--shimmerbg-bg) 4%, var(--shimmerbg-alt) 25%, var(--shimmerbg-bg) 36%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 20s linear infinite;
+  font-family: "Flow Rounded", sans-serif;
+}
+.showshimmer,
+[loadshimmerslow] {
+  animation-duration: 40s !important;
 }

@@ -129,10 +129,14 @@
             <div id="storylines-container">
               <div id="meetings-storyline" class="storyline-section">
                 <div class="placeholder accented-style accented-text large-screen-text-center">Upcoming Meetings</div>
-                <div class="meeting-card">
-                  <div class="meeting-time">0:00 - 0:00 Sunday 7/24/2022</div>
-                  <div class="meeting-location">Bubb Park, Mountain View, CA</div>
-                  <button class="meeting-map-button accented-btn">Map</button>
+                <div id="meeting-cards">
+                  <div class="meeting-card">
+                    <div class="meeting-time" loadshimmer>0:00 AM - Day m/dd/yyyy</div>
+                    <div class="meeting-location" loadshimmer>Bubb Park, Mountain View, CA</div>
+                    <button loadshimmerbg class="meeting-map-button accented-btn">
+                      <span loadshimmerslow class="slowshimmer">Map</span>
+                    </button>
+                  </div>
                 </div>
               </div>
               <div id="classes-storyline" class="storyline-section">
