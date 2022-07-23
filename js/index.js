@@ -60,6 +60,7 @@ $("#meetings-section").click(function () {
           href: thisPopup.attr("href") + "&ie=UTF8&t=&output=embed",
         });
       });
+      //SHHHH THIS ISNT FOR LOOKS WDYM
       setTimeout(function () {
         $("[loadshimmer]").removeAttr("loadshimmer");
         $("[loadshimmerslow]").removeAttr("loadshimmerslow");
