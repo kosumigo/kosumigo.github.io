@@ -43,7 +43,7 @@ class Meeting {
   }
 }
 $("#meetings-section").click(function () {
-  $.getJSON("../data/meetings.json")
+  $.getJSON("./data/meetings.json")
     .then((data) => {
       $("#meeting-cards").empty();
       for (meeting of data) {
