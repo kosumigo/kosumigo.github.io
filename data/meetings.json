@@ -1,5 +1,18 @@
 [
   {
-    "time": 1658550644721
+    "time": { "text": "3:00 - 4:00 PM | Sunday 7/24", "start": 996012000000, "end": 996015600000 },
+    "location": {
+      "name": "Bubb Park",
+      "latitude": 37.37805,
+      "longitude": -122.08353
+    }
+  },
+  {
+    "time": { "text": "4:15 - 5:15 PM | Sunday 7/24", "start": 996016500000, "end": 996020100000 },
+    "location": {
+      "name": "Bubb Park",
+      "latitude": 37.37805,
+      "longitude": -122.08353
+    }
   }
 ]

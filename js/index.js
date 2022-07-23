@@ -9,10 +9,53 @@ $("#sections-nav > li").click(function () {
 $(".footer-item").click(function () {
   window.location.href = $(this).attr("href");
 });
-$.getJSON("../data/meetings.json")
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((error) => {
-    console.error("Error getting meetings JSON:", error.error);
-  });
+class Meeting {
+  constructor(json) {
+    this.place_name = json.location.name;
+    this.time = json.time;
+    this.location = json.location;
+  }
+  formatTime() {
+    let time = {
+        start: new Date(this.time.start),
+        end: new Date(this.time.end),
+      },
+      days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    return `${time.start
+      .toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+      .replace("PM", "")
+      .replace("AM", "")} - ${time.end.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    })} | ${days[time.start.getDay()]} ${time.start.getMonth() + 1}/${String(time.start.getDate()).padStart(2, "0")}`;
+  }
+  getHTML() {
+    return `<div class="meeting-card">
+        <div class="meeting-location" loadshimmer>${this.place_name}</div>
+        <div class="meeting-time" loadshimmer>${this.formatTime(this.time)}</div>
+        <button loadshimmerbg class="meeting-map-button accented-btn" href="https://maps.google.com/maps?q=south+australia">
+          <span loadshimmerslow class="slowshimmer">Open Map</span>
+        </button>
+      </div>`;
+  }
+}
+$("#meetings-section").click(function () {
+  $.getJSON("../data/meetings.json")
+    .then((data) => {
+      $("#meeting-cards").empty();
+      for (meeting of data) {
+        var m = new Meeting(meeting);
+        $("#meeting-cards").append(m.getHTML());
+      }
+
+      setTimeout(function () {
+        $("[loadshimmer]").removeAttr("loadshimmer");
+        $("[loadshimmerslow]").removeAttr("loadshimmerslow");
+        $("[loadshimmerbg]").removeAttr("loadshimmerbg");
+      }, 700);
+    })
+    .catch((error) => {
+      console.error("Error getting meetings JSON:", error.error);
+    });
+});
+/** MAP POPUP **/

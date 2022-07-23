@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Flow+Rounded&family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;500;700;800;900&family=Consolas:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Flow+Rounded&family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;500;700;800;900&family=Consolas:wght@400;500;700&family=Roboto:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap");
 
 :root {
   --bg: #141414;
@@ -660,6 +660,9 @@ form > * {
   #get-started-btn {
     min-width: 40%;
   }
+  #meeting-card {
+    max-width: unset !important;
+  }
 }
 
 .s-item-expanded {
@@ -682,7 +685,9 @@ form > * {
     margin-left: auto;
   }
 }
-[onclick] {
+
+[onclick],
+button {
   cursor: pointer;
 }
 footer {
@@ -721,14 +726,25 @@ footer span {
   backdrop-filter: blur(5px);
   border-radius: 10px;
   border: solid 1px var(--secondary-accent-transparent);
-  padding: 10px;
-  max-width: 330px;
+  padding: 15px;
+  width: 200px;
+  flex-grow: 1;
   color: var(--lower-accent);
   font-size: 20px;
-  margin: 5px 0;
+  margin: 10px;
+  flex-shrink: 0;
 }
-.meeting-time {
+#meeting-cards {
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.meeting-location {
   font-weight: bold;
+
+  font-size: 1.25em;
+  margin-bottom: 5px;
 }
 .meeting-map-button {
   border-radius: 10px;
@@ -766,4 +782,9 @@ footer span {
 .showshimmer,
 [loadshimmerslow] {
   animation-duration: 40s !important;
+}
+@media (min-width: 500px) {
+  .meeting-card {
+    max-width: 300px;
+  }
 }
