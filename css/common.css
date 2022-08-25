@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Flow+Rounded:wght@400&family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;500;700;800;900&family=Consolas:wght@400;500;700&family=Roboto:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap");
+
+:root {
+  --bg: #141414;
+  --bg-transparent: #14141480;
+  --icon-alt: #ffffff80;
+  --secondary-bg: #ffffff;
+  --secondary-accent: #e2e2e2;
+  --secondary-accent-transparent: #e2e2e2aa;
+  --accent1: #eba419;
+  --accent2: #bc6b2c;
+  --text-primary: #ffffff;
+  --text-secondary: #ffaf38cc;
+  --on-secondary-bg: #141414;
+  --on-secondary-bg-alt: #14141466;
+  --lower-accent: #b2a481;
+  --sidebar-accent: #6d6142;
+  --shimmer-bg: #b2a481aa;
+  --shimmer-alt: #b2a481;
+  --shimmerbg-bg: #b2a48160;
+  --shimmerbg-alt: #b2a4816a;
+}
+html {
+  background-color: var(--bg);
+  background-image: url(../img/accents.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+body {
+  padding: 20px;
+  margin: 0;
+  backdrop-filter: blur(20px);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+#page-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 550px;
+}
+[onclick],
+button {
+  cursor: pointer;
+}
+.accented-btn {
+  background: linear-gradient(to top right, var(--accent1) 0%, var(--accent2) 100%);
+  color: var(--secondary-bg);
+  font-weight: 500;
+}
+.accented-style,
+.accented-style-dark {
+  background: linear-gradient(93.8deg, #ffeb38 0%, #ff8c38 94.44%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-weight: 800;
+  max-width: 700px;
+}
+.accented-style-dark {
+  background: linear-gradient(93.8deg, hsl(29, 100%, 45%) 0%, hsl(51, 100%, 45%) 94.44%, hsla(61, 100%, 45%, 0.7) 94.44%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-weight: 800;
+  max-width: 700px;
+}
+.accented-text {
+  font-size: 64px;
+  line-height: 78px;
+}

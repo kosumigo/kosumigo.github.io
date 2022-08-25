@@ -511,6 +511,7 @@ form > * {
   width: calc(100% / 3);
   display: flex;
   flex-flow: column;
+  box-sizing: border-box;
 }
 #storylines-container {
   display: flex;
@@ -663,6 +664,9 @@ form > * {
   #meeting-card {
     max-width: unset !important;
   }
+  #storylines-container {
+    width: 300vw;
+  }
 }
 
 .s-item-expanded {
@@ -795,4 +799,51 @@ footer span {
 }
 .meeting-map-button span {
   pointer-events: none;
+}
+#team-members-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+.team-member {
+  min-height: 100px;
+  font-size: 0.9em;
+  max-width: 100%;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 100px;
+  flex-basis: 500px;
+  display: flex;
+  flex-flow: row nowrap;
+  box-sizing: border-box;
+  color: var(--lower-accent);
+  background-color: #00000040;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  border: solid 1px var(--secondary-accent-transparent);
+  padding: 10px;
+}
+.team-member-img {
+  border-radius: 7px;
+  height: 100%;
+  max-height: 128px;
+  margin-right: 20px;
+}
+.team-member-name {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+.team-member-quote {
+  margin-top: 10px;
+  font-size: 0.75em;
+  filter: saturate(0);
+}
+.team-member-quote::before,
+.team-member-quote::after {
+  content: '"';
+  font-weight: bold;
+  color: var(--lower-accent);
 }

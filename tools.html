@@ -120,7 +120,12 @@
         max-width: 700px;
       }
       .accented-style-dark {
-        background: linear-gradient(93.8deg, hsl(29, 100%, 45%) 0%, hsl(51, 100%, 45%) 94.44%, hsla(61, 100%, 45%, 0.7) 94.44%);
+        background: linear-gradient(
+          93.8deg,
+          hsl(29, 100%, 45%) 0%,
+          hsl(51, 100%, 45%) 94.44%,
+          hsla(61, 100%, 45%, 0.7) 94.44%
+        );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -177,13 +182,15 @@
       <div class="meeting-card">
         <div class="meeting-location" contenteditable loadshimmer>Location</div>
         <div class="meeting-time" loadshimmer>
-          <input type="time" id="start" /> - <input type="time" id="end" /> | <input type="date" id="date" />
+          <input type="time" id="start" /> - <input type="time" id="end" /> |
+          <input type="date" id="date" />
         </div>
         <div id="map-link-row">
           <input id="map-link" type="text" placeholder="Paste Google Maps Link Here" />
           <button loadshimmerbg class="meeting-map-button accented-btn">
             <span loadshimmerslow class="slowshimmer"
-              ><input type="checkbox" checked id="show-button" /> <label for="show-button">Show Button</label>
+              ><input type="checkbox" checked id="show-button" />
+              <label for="show-button">Show Button</label>
             </span>
           </button>
         </div>
@@ -213,9 +220,14 @@
       }
     });
     $("#save-button").click(function () {
-      if ($("#start").val() && $("#end").val() && $("#date").val() && ($("#map-link").val() || !$("#show-button").is(":checked"))) {
-        let startTime = new Date($("#date").val()),
-          endTime = new Date($("#date").val());
+      if (
+        $("#start").val() &&
+        $("#end").val() &&
+        $("#date").val() &&
+        ($("#map-link").val() || !$("#show-button").is(":checked"))
+      ) {
+        let startTime = new Date($("#date").val()).setYear(2022),
+          endTime = new Date($("#date").val()).setYear(2022);
         startTime.setHours($("#start").val().split(":")[0]);
         startTime.setMinutes($("#start").val().split(":")[1]);
         endTime.setHours($("#end").val().split(":")[0]);
@@ -232,7 +244,12 @@
           .then((response) => {
             response.push(data);
             console.log(response);
-            window.open(`https://sander.vonk.one/dev/rawviewer.html?${encodeURIComponent(JSON.stringify(response, null, "\t"))}`, "");
+            window.open(
+              `https://sander.vonk.one/dev/rawviewer.html?${encodeURIComponent(
+                JSON.stringify(response, null, "\t")
+              )}`,
+              ""
+            );
           })
           .catch((error) => {
             console.error("Error getting meetings JSON:", error.error);

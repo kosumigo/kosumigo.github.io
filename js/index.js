@@ -15,7 +15,9 @@ class Meeting {
     this.time = json.time;
     this.showbutton = json.showbutton;
     this.location = json.location;
-    this.location.query = this.location.query ? this.location.query : `${this.location.latitude},${this.location.longitude}`;
+    this.location.query = this.location.query
+      ? this.location.query
+      : `${this.location.latitude},${this.location.longitude}`;
   }
   formatTime() {
     let time = {
@@ -29,7 +31,9 @@ class Meeting {
       .replace("AM", "")} - ${time.end.toLocaleTimeString([], {
       hour: "2-digit",
       minute: "2-digit",
-    })} | ${days[time.start.getDay()]} ${time.start.getMonth() + 1}/${String(time.start.getDate()).padStart(2, "0")}`;
+    })} | ${days[time.start.getDay()]} ${time.start.getMonth() + 1}/${String(
+      time.start.getDate()
+    ).padStart(2, "0")}`;
   }
   getHTML(showButton = true) {
     let buttonHTML = showButton
