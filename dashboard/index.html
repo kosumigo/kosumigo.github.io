@@ -13,16 +13,72 @@
   <body>
     <div id="page-content">
       <div id="menu-bar">
-        <div id="menu-extras"></div>
+        <div id="menu-extras">
+          <div id="group-descriptor">
+            <img id="group-icon" src="../img/icon/logo-small-512.png" />
+            <div id="group-name">Kosumi Go School</div>
+          </div>
+        </div>
+        <hr style="opacity: 0.1" class="content-separator horizontal" />
         <div id="menu-items">
-          <div class="menu-item">
-            <div class="menu-item-icon"></div>
+          <div class="menu-item active" data-page="home">
+            <div class="menu-item-icon home-icon"></div>
+            <div class="menu-item-title">Home</div>
+          </div>
+          <div class="menu-item" data-page="classes">
+            <div class="menu-item-icon class-icon"></div>
+            <div class="menu-item-title">My Classes</div>
+          </div>
+          <div class="menu-item cart" data-page="orders">
+            <div class="cart-item">
+              <div class="menu-item-icon cart-icon"></div>
+              <div class="cart-bg">
+                <div class="cart-bg-cover"></div>
+              </div>
+            </div>
+            <div class="menu-item-title">Orders</div>
+          </div>
+          <div class="menu-item" data-page="find">
+            <div class="menu-item-icon search-icon"></div>
+            <div class="menu-item-title">Find Classes</div>
+          </div>
+          <div class="menu-item" data-page="profile">
+            <div class="menu-item-title"></div>
+            <div class="menu-item-icon profile-icon"></div>
+            <div class="menu-item-title">Profile</div>
           </div>
         </div>
       </div>
       <hr class="content-separator" />
-      <div id="tab-content"></div>
+      <div id="tabs-container" current-page="home">
+        <div class="tab active" data-page-name="home">
+          <div class="tab-content">
+            <div class="tab-title accented-text accented-style-dark">Overview</div>
+          </div>
+        </div>
+        <div class="tab" data-page-name="classes">
+          <div class="tab-content">
+            <div class="tab-title accented-text accented-style-dark">My Classes</div>
+          </div>
+        </div>
+        <div class="tab" data-page-name="orders">
+          <div class="tab-content">
+            <div class="tab-title accented-text accented-style-dark">Orders</div>
+          </div>
+        </div>
+        <div class="tab" data-page-name="find">
+          <div class="tab-content">
+            <div class="tab-title accented-text accented-style-dark">Find Classes</div>
+          </div>
+        </div>
+        <div class="tab" data-page-name="profile">
+          <div class="tab-content">
+            <div class="tab-title accented-text accented-style-dark">Profile</div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
+  <script src="../js/dash.js"></script>
   <script></script>
 </html>
