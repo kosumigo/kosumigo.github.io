@@ -170,6 +170,9 @@ body,
     transform-origin: center;
     z-index: 0;
   }
+  .tab-elements:not(:empty) {
+    min-height: 200px;
+  }
 }
 @keyframes spin-bg {
   10% {
@@ -267,6 +270,15 @@ body,
   .cart-bg {
     display: none !important;
   }
+  .tab-elements:not(:empty) {
+    min-height: 330px;
+    margin-bottom: calc(78px + 60px);
+  }
+  .tab-title {
+    text-align: center;
+    max-width: unset;
+    margin-bottom: 60px;
+  }
 }
 .menu-item-icon {
   background-color: var(--icon-alt);
@@ -313,4 +325,82 @@ body,
   width: calc(50px - (8px * 2));
   height: calc(50px - (8px * 2));
   border-radius: 50px;
+}
+.tab-content {
+  flex-grow: 1;
+}
+:root {
+  --card-label: #ffffff;
+  --card-border: #ffffff3d;
+  --card-bg: #ffffff4d;
+  --card-border-bg: #ffffff0a;
+  --bg-color: #141414;
+  /* --card-border: #80808080; */
+}
+
+.card {
+  border-radius: 15px;
+  margin: 10px;
+  padding: 15px;
+  flex-grow: 1;
+  min-height: 50px;
+  cursor: pointer;
+  background-color: var(--card-bg);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-flow: column;
+}
+.card > * {
+  pointer-events: none;
+}
+.card-bordered {
+  backdrop-filter: blur(10px);
+  background-color: var(--card-border-bg);
+  border: solid 2px var(--card-border);
+}
+.card-group {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 300px;
+}
+.card-icon-large {
+  width: 40px;
+  height: 40px;
+  flex-grow: 0;
+}
+.card-large {
+  padding: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-flow: row wrap;
+}
+.card-large .card-label {
+  margin-top: 20px;
+  font-family: "Montserrat Alternates", sans-serif;
+  color: var(--card-label);
+  width: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  flex-grow: 1;
+  font-size: 18px;
+  text-align: center;
+}
+.placeholder-icon {
+  height: 30px;
+  width: 30px;
+}
+#classes-placeholder {
+  flex-flow: row nowrap;
+  cursor: inherit;
+}
+#classes-placeholder > * {
+  opacity: 0.25;
+  pointer-events: none;
+  user-select: none;
+}
+#classes-placeholder .placeholder-text {
+  color: var(--card-label);
+  margin-left: 20px;
 }

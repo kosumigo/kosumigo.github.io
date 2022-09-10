@@ -31,6 +31,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
+    <noscript>Sorry, Javascript must be enabled for this page to work properly</noscript>
     <div id="page-content">
       <div id="menu-bar">
         <div id="menu-extras">
@@ -79,21 +80,50 @@
         <div class="tab" data-page-name="classes">
           <div class="tab-content">
             <div class="tab-title accented-text accented-style-dark">My Classes</div>
+            <div class="tab-elements flex-row flex-wrap">
+              <div id="classes" class="card-group flex-column" style="flex-grow: 2">
+                <div id="classes-placeholder" class="card card-bordered flex-row flex-nowrap flex-center">
+                  <object class="placeholder-icon" data="../img/icon/dash/class.svg" type="image/svg+xml">
+                    <img src="../img/icon/dash/class.png" />
+                  </object>
+                  <div class="placeholder-text">No Classes Yet</div>
+                </div>
+              </div>
+              <div class="card-group flex-row flex-nowrap">
+                <div class="card card-large flex-center">
+                  <object class="card-icon-large" data="../img/icon/link-icon.svg" type="image/svg+xml">
+                    <img src="../img/icon/link-icon.png" />
+                  </object>
+                  <hr class="flex-break" />
+                  <div class="card-label">Join Meeting</div>
+                </div>
+                <div class="card card-large flex-center">
+                  <object class="card-icon-large" data="../img/icon/add-icon.svg" type="image/svg+xml">
+                    <img src="../img/icon/add-icon.png" />
+                  </object>
+                  <hr class="flex-break" />
+                  <div class="card-label">Add Class</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="tab" data-page-name="orders">
           <div class="tab-content">
             <div class="tab-title accented-text accented-style-dark">Orders</div>
+            <div class="tab-elements flex-row flex-wrap"></div>
           </div>
         </div>
         <div class="tab" data-page-name="find">
           <div class="tab-content">
             <div class="tab-title accented-text accented-style-dark">Find Classes</div>
+            <div class="tab-elements flex-row flex-wrap"></div>
           </div>
         </div>
         <div class="tab" data-page-name="profile">
           <div class="tab-content">
             <div class="tab-title accented-text accented-style-dark">Profile</div>
+            <div class="tab-elements flex-row flex-wrap"></div>
           </div>
         </div>
       </div>

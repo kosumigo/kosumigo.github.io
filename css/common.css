@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Flow+Rounded:wght@400&family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;500;700;800;900&family=Consolas:wght@400;500;700&family=Roboto:wght@400;500;700&family=Noto+Sans:wght@400;700&family=Lato:wght@400;500;600;700&display=swap");
+@import url("://fonts.googleapis.com/css2?family=Flow+Rounded:wght@400&family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;500;700;800;900&family=Consolas:wght@400;500;700&family=Roboto:wght@400;500;700&family=Noto+Sans:wght@400;700&family=Lato:wght@400;500;600;700&family=Montserrat+Alternates:wght@400;500;600;700&display=swap");
 
 :root {
   --bg: #141414;
@@ -84,4 +84,37 @@ button {
 .accented-text {
   font-size: 64px;
   line-height: 78px;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-grow {
+  flex-grow: 1;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.space-between {
+  justify-content: space-between;
+}
+.flex-break {
+  width: 100%;
+  flex-shrink: 0;
+  opacity: 0;
+  height: 0px;
+  border: none;
+  margin: 0;
 }
