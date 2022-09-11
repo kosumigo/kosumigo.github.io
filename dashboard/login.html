@@ -48,16 +48,16 @@
             <object title="Email Input" class="input-icon" data="../img/icon/login/email.svg" type="image/svg+xml">
               <img src="../img/icon/login/email.png" />
             </object>
-            <input type="email" name="email" id="email-input" placeholder="Email" />
+            <input data-auth-role="email-input" type="email" name="email" id="email-input" placeholder="Email" />
           </div>
           <div class="input-pair flex-row flex-nowrap">
             <object title="Password Input" class="input-icon" data="../img/icon/login/password.svg" type="image/svg+xml">
               <img src="../img/icon/login/password.png" />
             </object>
-            <input type="password" name="password" id="password-input" placeholder="Password" />
+            <input data-auth-role="password-input" type="password" name="password" id="password-input" placeholder="Password" />
           </div>
           <div class="input-pair flex-row flex-nowrap" style="margin-top: 20px">
-            <input type="checkbox" name="remember" id="remember-input" />
+            <input data-auth-role="remember-user" type="checkbox" name="remember" id="remember-input" />
             <label for="remember-input" class="checkbox-label flex-row flex-center flex-nowrap">
               <div class="checkbox-icon"></div>
               Remember Me</label
@@ -66,7 +66,10 @@
           <input id="signin-button" type="button" value="Sign In" />
         </div>
       </div>
-      <div id="other-options" class="flex-row flex-nowrap"></div>
+      <div id="other-options" class="flex-column flex-center">
+        <div id="signup" class="flex-row flex-nowrap">Don't have an account?&nbsp;<a href="./signup.html">Sign Up</a></div>
+        <a data-auth-role="reset-password" href="#forgot-password" id="forgot-password" class="flex-row flex-center">Forgot Password?</a>
+      </div>
     </div>
   </body>
 </html>

@@ -115,7 +115,8 @@ button {
   margin: 0;
 }
 html {
-  background-image: url(../img/accents.svg);
+  background-image: url(../img/accents.png);
+  /* background-image: url(../img/accents.svg); */
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -128,7 +129,6 @@ html {
 body {
   padding: 20px;
   margin: 0;
-  backdrop-filter: blur(20px);
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -136,4 +136,5 @@ body {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  backdrop-filter: blur(20px);
 }

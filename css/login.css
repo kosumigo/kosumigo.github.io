@@ -5,6 +5,7 @@ html {
   --login-box-bg: #ffffff0a;
   --login-secondary: #c2c2c2a4;
   --login-accent: #e49d33;
+  --login-accent-2: #ffa238;
 }
 #onboard-container {
   max-width: 500px;
@@ -106,6 +107,7 @@ input[type="text"]::placeholder {
   color: var(--login-secondary);
 }
 #signin-button {
+  background: linear-gradient(40deg, var(--login-accent-2) 0%, var(--login-accent) 100%);
   background-color: var(--login-accent);
   color: var(--text-primary);
   border-radius: 10px;
@@ -134,6 +136,23 @@ input[type="text"]::placeholder {
   pointer-events: none;
   user-select: none;
 }
+#signup {
+  margin-bottom: 20px;
+}
+#other-options {
+  color: var(--login-secondary);
+  font-size: 16px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+#other-options a[href],
+#other-options a[href]:visited,
+#other-options :-webkit-any-link {
+  color: var(--login-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
 /* background */
 @media (max-width: 500px) {
   body {
@@ -143,15 +162,16 @@ input[type="text"]::placeholder {
     background: none;
     backdrop-filter: none;
     padding: 20px;
+    margin-bottom: 10px;
   }
 }
 html {
-  background-image: url(../img/login-top-accent.png);
-  background-image: url(../img/login-accents.svg);
+  background-image: url(../img/login-accents.png);
+  /* background-image: url(../img/login-accents.svg); */
 }
 body {
   background-image: url(../img/login-top-accent.png);
-  background-image: url(../img/login-top-accent.svg);
+  /* background-image: url(../img/login-top-accent.svg); */
   background-size: contain;
   background-position: top left;
   background-repeat: no-repeat;
