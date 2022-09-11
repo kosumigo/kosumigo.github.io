@@ -98,12 +98,16 @@ $('[data-auth-role="create-account"').click(function () {
       .then((userCredential) => {
         user = userCredential.user;
         // create user document in firestore keyed by uid with name
-        setDoc(doc(db, "users", user.uid), {
-          name: $('[data-auth-role="name"]').val(),
-          email: email,
-          uid: user.uid,
-          created: new Date().getTime(),
-        })
+        setDoc(
+          doc(db, "users", user.uid),
+          {
+            name: $('[data-auth-role="name"]').val(),
+            email: email,
+            uid: user.uid,
+            created: new Date().getTime(),
+          },
+          { merge: true }
+        )
           .then(() => {
             window.location = "/dashboard/verify.html";
           })
