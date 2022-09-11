@@ -154,8 +154,22 @@ a[data-auth-role],
   text-decoration: none;
   cursor: pointer;
 }
-
+[data-auth-role="email"] {
+  color: var(--text-primary);
+}
+#verify-art {
+  width: 300px;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
 /* background */
+@media (min-width: 501px) {
+  #login-box {
+    margin-bottom: 100px;
+    /* centers box on screen */
+  }
+}
 @media (max-width: 500px) {
   body {
     background-size: cover;
@@ -172,11 +186,6 @@ html {
   /* background-image: url(../img/login-accents.svg); */
 }
 body {
-  background-image: url(../img/login-top-accent.png);
-  /* background-image: url(../img/login-top-accent.svg); */
-  background-size: contain;
-  background-position: top left;
-  background-repeat: no-repeat;
   padding: 0 !important;
 }
 @media (max-width: 500px) {

@@ -1,4 +1,8 @@
 @import url("://fonts.googleapis.com/css2?family=Flow+Rounded:wght@400&family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;500;700;800;900&family=Consolas:wght@400;500;700&family=Roboto:wght@400;500;700&family=Noto+Sans:wght@400;700&family=Lato:wght@400;500;600;700&family=Montserrat+Alternates:wght@400;500;600;700&display=swap");
+html,
+body {
+  overflow: hidden;
+}
 html {
   background-color: #141414;
 }
@@ -28,12 +32,12 @@ html {
   --toast-border: #242424;
   --toast-secondary: #3b3b3b;
   /*popup*/
-  --primary: #6bd5ef;
-  --primary-container: #004e5c;
-  --on-primary: #003640;
-  --on-primary-container: #abedff;
-  --popup-bg: #191c1d;
-  --on-popup-bg: #e1e3e3;
+  --primary: hsl(36, 77%, 55%);
+  --primary-container: hsl(36, 100%, 18%);
+  --on-primary: hsl(36, 100%, 13%);
+  --on-primary-container: hsl(36, 100%, 84%);
+  --popup-bg: hsl(36, 7%, 11%);
+  --on-popup-bg: hsl(36, 3%, 89%);
   --popup-red: #de3730;
 }
 
@@ -54,6 +58,10 @@ button {
   background: linear-gradient(to top right, var(--accent1) 0%, var(--accent2) 100%);
   color: var(--secondary-bg);
   font-weight: 500;
+  border-radius: 10px;
+  padding: 10px 20px;
+  border: none;
+  height: 50px;
 }
 .accented-style,
 .accented-style-dark {

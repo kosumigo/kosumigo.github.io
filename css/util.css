@@ -105,6 +105,7 @@ button {
   .toast {
     margin: 20px;
     right: 0;
+    bottom: 0;
     width: calc(100% - 40px);
     transform: none;
     left: unset;

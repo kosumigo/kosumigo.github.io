@@ -46,7 +46,7 @@ class Toast {
 class ErrorToast extends Toast {
   constructor(message, err, duration, action = "") {
     message += ": " + err;
-    super(message, "default", duration, "/img/icon/error-icon.svg", action);
+    super(message, "default", duration, "/img/icon/toast/error-icon.svg", action);
   }
 }
 /** POPUP **/
@@ -104,5 +104,5 @@ $(document.body).on("click", ".popup-overlay", function () {
 
 /** Other **/
 $("[placeholdaction]").click(function () {
-  new Toast("This feature hasn't been implemented yet, sorry! 🤫", "default", 1500, "/img/icon/unimplemented-icon.svg");
+  new Toast("This feature hasn't been implemented yet, sorry! 🤫", "default", 1500, "/img/icon/toast/unimplemented-icon.svg");
 });

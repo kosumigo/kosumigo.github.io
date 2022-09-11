@@ -134,6 +134,11 @@ input[type="text"]::placeholder {
   transition: background-color 0.2s;
   margin-bottom: 40px;
 }
+[data-auth-role="create-account"][disabled],
+[data-auth-role="create-account"].disabled {
+  background: var(--login-secondary) !important;
+  cursor: not-allowed !important;
+}
 .input-icon {
   position: absolute;
   box-sizing: border-box;
