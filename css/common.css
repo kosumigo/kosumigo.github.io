@@ -1,5 +1,7 @@
 @import url("://fonts.googleapis.com/css2?family=Flow+Rounded:wght@400&family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;500;700;800;900&family=Consolas:wght@400;500;700&family=Roboto:wght@400;500;700&family=Noto+Sans:wght@400;700&family=Lato:wght@400;500;600;700&family=Montserrat+Alternates:wght@400;500;600;700&display=swap");
-
+html {
+  background-color: #141414;
+}
 :root {
   --bg: #141414;
   --bg-transparent: #14141480;
@@ -34,30 +36,7 @@
   --on-popup-bg: #e1e3e3;
   --popup-red: #de3730;
 }
-html {
-  background-color: var(--bg);
-  background-image: url(../img/accents.svg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
-  font-family: "Montserrat", sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-}
-body {
-  padding: 20px;
-  margin: 0;
-  backdrop-filter: blur(20px);
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-}
+
 #page-content {
   padding: 20px;
   flex-grow: 1;
@@ -99,6 +78,9 @@ button {
   font-size: 64px;
   line-height: 78px;
 }
+.fill-width {
+  width: 100%;
+}
 .flex-column {
   display: flex;
   flex-direction: column;
@@ -131,4 +113,27 @@ button {
   height: 0px;
   border: none;
   margin: 0;
+}
+html {
+  background-image: url(../img/accents.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+body {
+  padding: 20px;
+  margin: 0;
+  backdrop-filter: blur(20px);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }

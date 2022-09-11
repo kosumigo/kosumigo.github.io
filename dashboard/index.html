@@ -29,10 +29,12 @@
     <meta name="og:site_name" content="Kosumi | Home" />
     <meta name="og:type" content="website" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
-    <noscript>Sorry, Javascript must be enabled for this page to work properly</noscript>
+    <noscript>
+      <div class="toast-overlay" style="animation: fadeIn 0.5s forwards"></div>
+      <div class="toast default" style="animation: slideIn 0.5s forwards"><img src="/img/icon/toast/error-icon.svg" class="toast-icon" alt="Toast Popup Icon" />Sorry, Javascript must be enabled for this page to work properly</div>
+    </noscript>
     <div id="page-content">
       <div id="menu-bar">
         <div id="menu-extras">

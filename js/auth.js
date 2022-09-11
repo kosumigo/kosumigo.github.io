@@ -34,6 +34,6 @@ auth.onAuthStateChanged((user) => {
   } else {
     // User is signed out
     // ...
-    new Toast("Sorry, you need to be logged in to access the dashboard", "default", 5000, "/img/icon/toast/error-icon.svg", "/");
+    new Toast("Sorry, you must be logged in to access the dashboard", "default", 5000, "/img/icon/toast/error-icon.svg", "./login.html");
   }
 });
