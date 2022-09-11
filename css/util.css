@@ -81,6 +81,33 @@ button {
   opacity: 0.5;
   animation: fadeIn 0.25s forwards infinite;
 }
+@keyframes slideIn {
+  from {
+    transform: translateX(-50%) translateY(100%);
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideOut {
+  from {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-50%) translateY(100%);
+    opacity: 0;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0 !important;
+  }
+  to {
+    opacity: 0.5 !important;
+  }
+}
 @media (min-width: 500px) {
   @keyframes slideIn {
     from {
@@ -105,7 +132,6 @@ button {
   .toast {
     margin: 20px;
     right: 0;
-    bottom: 0;
     width: calc(100% - 40px);
     transform: none;
     left: unset;
