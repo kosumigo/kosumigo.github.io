@@ -1,13 +1,13 @@
 <svg width="1512" height="1122" viewBox="0 0 1512 1122" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_241_161)">
-<g opacity="0.25">
+<g opacity="0.5">
 <circle cx="65.5" cy="116.5" r="258.5" stroke="black" stroke-width="110"/>
 <circle cx="65.5" cy="116.5" r="258.5" stroke="url(#paint0_radial_241_161)" stroke-width="110"/>
 </g>
 </g>
 <defs>
 <radialGradient id="paint0_radial_241_161" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(332 -136.5) rotate(126.339) scale(723.131 584.161)">
-<stop stop-color="#FFEB38"/>
+<stop stop-color="#FFB338"/>
 <stop offset="0.657637" stop-color="#FF8C38" stop-opacity="0.7"/>
 <stop offset="1" stop-color="#FFA038" stop-opacity="0.1"/>
 </radialGradient>

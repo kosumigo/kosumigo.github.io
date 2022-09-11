@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../img/icon/logo-small-64.png" type="image/x-icon" />
+    <title>Kosumi Go | Login</title>
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/util.css" />
+    <link rel="stylesheet" href="../css/signup.css" />
+    <meta name="apple-mobile-web-app-status-bar" content="#3FBCAE" />
+    <meta name="theme-color" content="#3CADC6" />
+    <!-- Search Engine -->
+    <meta name="description" content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!" />
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="Kosumi Go School" />
+    <meta itemprop="description" content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Kosumi Go School" />
+    <meta name="twitter:description" content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!" />
+    <meta name="twitter:image:src" content="//kosumigo.github.io//social-img/social-twitter.png" />
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="Kosumi Go School" />
+    <meta name="og:description" content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!" />
+    <meta name="og:image" content="//kosumigo.github.io//social-img/social-og.png" />
+    <meta name="og:url" content="//kosumigo.github.io//" />
+    <meta name="og:site_name" content="Kosumi | Home" />
+    <meta name="og:type" content="website" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body class="flex-row flex-nowrap flex-center">
+    <noscript>
+      <div class="toast-overlay" style="animation: fadeIn 0.5s forwards"></div>
+      <div class="toast default" style="animation: slideIn 0.5s forwards"><img src="/img/icon/toast/error-icon.svg" class="toast-icon" alt="Toast Popup Icon" />Sorry, Javascript must be enabled for this page to work properly</div>
+    </noscript>
+    <div id="artwork-container">
+      <object title="Kosumi Artwork" class="artwork-fill" data="../img/icon/login/artwork.svg" type="image/svg+xml">
+        <img src="../img/icon/login/artwork.png" />
+      </object>
+    </div>
+    <div id="org-title" class="flex-row flex-nowrap flex-center">
+      <img id="org-icon" src="../img/icon/login/onboard-small-icon.png" />
+      <div id="org-name">Kosumi Go School</div>
+    </div>
+    <div id="right-side-container">
+      <div id="onboard-container" class="flex-column">
+        <div id="signup-box" class="flex-column">
+          <div id="signup-text" class="fill-width">
+            <div class="signup-text-primary">Create your account</div>
+            <div class="signup-text-secondary">Begin your Kosumi Go experience</div>
+          </div>
+          <div class="input-pair flex-row flex-nowrap">
+            <object title="Name Input" class="input-icon" data="../img/icon/login/profile.svg" type="image/svg+xml">
+              <img src="../img/icon/login/profile.png" />
+            </object>
+            <input data-auth-role="name-input" type="text" name="name" id="name-input" placeholder="Name" />
+          </div>
+          <div class="input-pair flex-row flex-nowrap">
+            <object title="Email Input" class="input-icon" data="../img/icon/login/email.svg" type="image/svg+xml">
+              <img src="../img/icon/login/email.png" />
+            </object>
+            <input data-auth-role="email-input" type="email" name="email" id="email-input" placeholder="Email" />
+          </div>
+          <div class="input-pair flex-row flex-nowrap">
+            <object title="Password Input" class="input-icon" data="../img/icon/login/password.svg" type="image/svg+xml">
+              <img src="../img/icon/login/password.png" />
+            </object>
+            <input data-auth-role="password-input" type="password" name="password" id="password-input" placeholder="Password" />
+          </div>
+          <div class="input-pair flex-row flex-nowrap" style="margin-top: 20px">
+            <input checked data-auth-role="agree-to-terms" type="checkbox" name="terms" id="terms-input" />
+            <label for="terms-input" class="checkbox-label flex-row flex-center flex-nowrap">
+              <div class="checkbox-icon"></div>
+              I agree to the Terms and Conditions</label
+            >
+          </div>
+          <input data-auth-role="create-account" id="create-account" type="button" value="Create my account" />
+        </div>
+        <div id="other-options" class="flex-column flex-center">
+          <div id="signup" class="flex-row flex-nowrap">Already have an account?&nbsp;<a href="./login.html">Sign In</a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
