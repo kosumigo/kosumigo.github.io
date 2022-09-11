@@ -135,7 +135,16 @@ input[type="text"]::placeholder {
   user-select: none;
 }
 /* background */
-
+@media (max-width: 500px) {
+  body {
+    background-size: cover;
+  }
+  #login-box {
+    background: none;
+    backdrop-filter: none;
+    padding: 20px;
+  }
+}
 html {
   background-image: url(../img/login-top-accent.png);
   background-image: url(../img/login-accents.svg);
