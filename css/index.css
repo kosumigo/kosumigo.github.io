@@ -166,8 +166,15 @@ header {
   display: flex;
   flex-flow: row nowrap;
 }
-#get-started-btn {
+#get-started-btn,
+#interest-btn {
   font-weight: 500;
+}
+#interest-btn {
+  border: solid 2px var(--accent2);
+  background: #ffffff1d;
+  backdrop-filter: blur(5px);
+  margin-left: 20px;
 }
 #header-stats {
   margin-top: 45px;
@@ -658,8 +665,9 @@ form > * {
     display: flex;
     flex-flow: row nowrap;
   }
-  #get-started-btn {
-    min-width: 40%;
+  #get-started-btn,
+  #interest-btn {
+    min-width: 35%;
   }
   #meeting-card {
     max-width: unset !important;

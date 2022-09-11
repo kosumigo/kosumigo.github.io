@@ -19,6 +19,20 @@
   --shimmer-alt: #b2a481;
   --shimmerbg-bg: #b2a48160;
   --shimmerbg-alt: #b2a4816a;
+  /*toast*/
+  --toast-bg: #191c1d;
+  --toast-bg-transparent: #303030aa;
+  --toast-text: #ffffff;
+  --toast-border: #242424;
+  --toast-secondary: #3b3b3b;
+  /*popup*/
+  --primary: #6bd5ef;
+  --primary-container: #004e5c;
+  --on-primary: #003640;
+  --on-primary-container: #abedff;
+  --popup-bg: #191c1d;
+  --on-popup-bg: #e1e3e3;
+  --popup-red: #de3730;
 }
 html {
   background-color: var(--bg);
