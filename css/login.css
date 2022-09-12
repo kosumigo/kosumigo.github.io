@@ -189,3 +189,14 @@ body {
     width: 500px;
   }
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-internal-autofill-selected {
+  border: solid 1px var(--text-primary) !important;
+  color: var(--text-primary) !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+  background: #e49d33aa !important;
+  appearance: none;
+  -webkit-box-shadow: 0 0 0 50px #141414dd inset !important;
+}
