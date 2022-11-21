@@ -106,3 +106,16 @@ $(document.body).on("click", ".popup-overlay", function () {
 $("[placeholdaction]").click(function () {
   new Toast("This feature hasn't been implemented yet, sorry! 🤫", "default", 1500, "/img/icon/toast/unimplemented-icon.svg");
 });
+
+$(document.body).on("click", "*:not(a)[href]", function () {
+  window.location.href = $(this).attr("href");
+});
+$(document.body).on("click", "#prompt-overlay", function () {
+  $(this)
+    .next("#prompt-container")
+    .addClass("prompt-out")
+    .add(this)
+    .animate({ opacity: 0 }, 250, function () {
+      $(this).remove();
+    });
+});

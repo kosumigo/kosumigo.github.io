@@ -294,3 +294,9 @@ button {
   animation: fadeZoomOut 0.15s ease-out forwards !important;
   pointer-events: none !important;
 }
+*:not(a)[href] {
+  cursor: pointer;
+}
+*:not(a)[href] > * {
+  pointer-events: none;
+}

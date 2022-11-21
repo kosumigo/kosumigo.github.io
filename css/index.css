@@ -1,3 +1,13 @@
+/* 
+
+  Wireframe:
+  https://sites.google.com/view/kosumi-go-school/home
+
+  Structure:
+  https://schoolhouse.world/sat-bootcamp/explore
+
+*/
+
 @import url("https://fonts.googleapis.com/css2?family=Flow+Rounded&family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;500;700;800;900&family=Consolas:wght@400;500;700&family=Roboto:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap");
 
 :root {
@@ -5,6 +15,7 @@
   --secondary-bg: #ffffff;
   --secondary-accent: #e2e2e2;
   --secondary-accent-transparent: #e2e2e2aa;
+  --border-faded: #9494944d;
   --accent1: #eba419;
   --accent2: #bc6b2c;
   --text-primary: #ffffff;
@@ -854,4 +865,129 @@ footer span {
   content: '"';
   font-weight: bold;
   color: var(--lower-accent);
+}
+
+/** PROMPT **/
+
+#prompt-overlay,
+#prompt-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000000;
+}
+@keyframes prompt-overlay-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#prompt-overlay {
+  background-color: #0000004d;
+  cursor: pointer;
+  animation: prompt-overlay-in 0.25s ease-in-out;
+  backdrop-filter: blur(4px);
+}
+#prompt-container {
+  box-sizing: border-box;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: 1000001;
+}
+#prompt-box {
+  background-color: var(--bg);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px 0 var(--on-secondary-bg-alt);
+  max-width: calc(500px + 5vw);
+  pointer-events: all;
+  animation: prompt-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  background-image: url(../img/prompt-accents.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: solid 2px var(--border-faded);
+}
+#prompt-buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+#prompt-buttons > *:not(:last-child) {
+  margin-right: 20px;
+}
+#prompt-buttons > button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+@keyframes prompt-in {
+  0% {
+    transform: scale(0.25);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes prompt-zoom-out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+.prompt-out {
+  animation: ease-in prompt-zoom-out 0.3s forwards;
+}
+
+#prompt-title {
+  line-height: 62px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 52px;
+  color: #141414;
+  font-weight: 900;
+}
+#prompt-subtitle {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+#prompt-text {
+  font-size: 19px;
+  margin-bottom: 10px;
+  color: #eee1be;
+}
+#prompt-form {
+  border: solid 2px #bc8a2c !important;
+  backdrop-filter: blur(5px);
+  background: #ffffff1d;
+}
+@media (max-width: 500px) {
+  #prompt-title {
+    font-size: 42px;
+  }
+  #prompt-subtitle {
+    font-size: 18px;
+  }
+  #prompt-text {
+    font-size: 16px;
+  }
+  #prompt-buttons > button {
+    font-size: 16px;
+  }
 }
