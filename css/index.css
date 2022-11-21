@@ -931,6 +931,7 @@ footer span {
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
+  white-space: nowrap;
 }
 @keyframes prompt-in {
   0% {
@@ -989,5 +990,13 @@ footer span {
   }
   #prompt-buttons > button {
     font-size: 16px;
+    height: 40px;
+  }
+  #prompt-buttons {
+    flex-flow: column nowrap;
+  }
+  #prompt-buttons > *:not(:last-child) {
+    margin-right: 0px;
+    margin-bottom: 10px;
   }
 }
