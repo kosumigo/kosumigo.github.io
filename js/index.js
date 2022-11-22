@@ -15,9 +15,7 @@ class Meeting {
     this.time = json.time;
     this.showbutton = json.showbutton;
     this.location = json.location;
-    this.location.query = this.location.query
-      ? this.location.query
-      : `${this.location.latitude},${this.location.longitude}`;
+    this.location.query = this.location.query ? this.location.query : `${this.location.latitude},${this.location.longitude}`;
   }
   formatTime() {
     let time = {
@@ -25,20 +23,13 @@ class Meeting {
         end: new Date(this.time.end),
       },
       days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    return `${time.start
-      .toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
-      .replace("PM", "")
-      .replace("AM", "")} - ${time.end.toLocaleTimeString([], {
+    return `${time.start.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }).replace("PM", "").replace("AM", "")} - ${time.end.toLocaleTimeString([], {
       hour: "2-digit",
       minute: "2-digit",
-    })} | ${days[time.start.getDay()]} ${time.start.getMonth() + 1}/${String(
-      time.start.getDate()
-    ).padStart(2, "0")}`;
+    })} | ${days[time.start.getDay()]} ${time.start.getMonth() + 1}/${String(time.start.getDate()).padStart(2, "0")}`;
   }
   getHTML(showButton = true) {
-    let buttonHTML = showButton
-      ? `<button loadshimmerbg class="meeting-map-button accented-btn" href="https://maps.google.com/?q=${this.location.query}"><span loadshimmerslow class="slowshimmer">Open Map</span></button>`
-      : "";
+    let buttonHTML = showButton ? `<button loadshimmerbg class="meeting-map-button accented-btn" href="https://maps.google.com/?q=${this.location.query}"><span loadshimmerslow class="slowshimmer">Open Map</span></button>` : "";
     return `<div class="meeting-card">
         <div class="meeting-location" loadshimmer>${this.place_name}</div>
         <div class="meeting-time" loadshimmer>${this.formatTime(this.time)}</div>
@@ -46,7 +37,7 @@ class Meeting {
       </div>`;
   }
 }
-$("#meetings-section").click(function () {
+$("#learn-section").click(function () {
   $.getJSON("./data/meetings.json")
     .then((data) => {
       $("#meeting-cards").empty();

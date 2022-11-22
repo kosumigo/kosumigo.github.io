@@ -107,32 +107,65 @@
           </div> -->
           <div id="storyline-nav">
             <div id="sections-nav">
-              <li id="meetings-section" class="nav-item">
+              <li id="learn-section" class="nav-item">
                 <hr class="hidden" />
                 <div class="nav-item-title">Classes</div>
                 <hr />
               </li>
-              <li id="classes-section" class="nav-item active">
+              <li id="about-section" class="nav-item active">
                 <hr class="hidden" />
                 <div class="nav-item-title">About</div>
                 <hr />
               </li>
-              <li id="about-section" class="nav-item">
+              <li id="team-section" class="nav-item">
                 <hr class="hidden" />
                 <div class="nav-item-title">Our Team</div>
                 <hr />
               </li>
             </div>
-            <!-- <select id="dropdown-nav">
-              <option value="meetings-section">Meetings</option>
-              <option selected value="classes-section">Classes</option>
-            </select> -->
           </div>
-          <div id="lower-storyline" class="primary-bg" section="classes-section">
+          <div id="lower-storyline" class="primary-bg" section="about-section">
             <div id="storylines-container">
               <div id="meetings-storyline" class="storyline-section">
-                <div class="placeholder accented-style accented-text large-screen-text-center">Upcoming Meetings</div>
-                <div id="meeting-cards">
+                <div class="placeholder accented-style accented-text large-screen-text-center">Find Classes</div>
+                <div class="section-text lower-text">
+                  <div class="upper-text">Our classes are <b style="color: var(--text-primary)">$15/hr</b> after the <b style="color: var(--text-primary)">free trial</b> period</div>
+                  <div class="upper-subtext">We have drop-in classes designed for players of any level!</div>
+                  <div class="classtype-section">
+                    <div class="classtypes-container">
+                      <div class="classtype-title">Beginner</div>
+                      <div class="classtype-options">
+                        <div class="classtype-option">
+                          <div class="classtype-option-name accented-style">Beginner I</div>
+                          <hr class="classtype-option-hr" />
+                          <div class="classtype-option-teacher">Teacher: <a onclick="$('.nav-item#team-section').click();$('body').animate({scrollTop:$('#lower-content-container').position().top + $('body').scrollTop()})">Elwin Li</a></div>
+                          <div class="classtype-option-time">Time: Sundays 3-4 PM</div>
+                          <div class="classtype-option-description">Short description</div>
+                        </div>
+                        <div class="classtype-option">
+                          <div class="classtype-option-name accented-style">Beginner II</div>
+                          <hr class="classtype-option-hr" />
+                          <div class="classtype-option-teacher">Teacher: <a onclick="$('.nav-item#team-section').click();$('body').animate({scrollTop:$('#lower-content-container').position().top + $('body').scrollTop()})">Elwin Li</a></div>
+                          <div class="classtype-option-time">Time: Sundays 3-4 PM</div>
+                          <div class="classtype-option-description">Short description</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="classtypes-container">
+                      <div class="classtype-title">Online</div>
+                      <div class="classtype-options">
+                        <div class="classtype-option">
+                          <div class="classtype-option-name accented-style">Online I</div>
+                          <hr class="classtype-option-hr" />
+                          <div class="classtype-option-teacher">Teacher: <a onclick="$('.nav-item#team-section').click();$('body').animate({scrollTop:$('#lower-content-container').position().top + $('body').scrollTop()})">Elwin Li</a></div>
+                          <div class="classtype-option-time">Time: Sundays 3-4 PM</div>
+                          <div class="classtype-option-description">Short description</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div id="meeting-cards">
                   <div class="meeting-card">
                     <div class="meeting-location" loadshimmer>Location</div>
                     <div class="meeting-time" loadshimmer>0:00 - 0:00 PM | Day mm/dd</div>
@@ -140,7 +173,7 @@
                       <span loadshimmerslow class="slowshimmer">Open Map</span>
                     </button>
                   </div>
-                </div>
+                </div> -->
               </div>
               <div id="classes-storyline" class="storyline-section">
                 <div id="storyline-title" class="accented-text accented-style">
@@ -155,7 +188,7 @@
                     </div>
                     <div class="s-item-content">
                       <span class="lower-text">Our teachers are nationally ranked Go players around the United States and passionate about the sport of Go.</span>
-                      <span class="lower-text-alt">We’re dedicated to providing a fun and useful learning experience to you too!</span>
+                      <span class="lower-text-alt">We're dedicated to providing a fun and useful learning experience to you too!</span>
                     </div>
                   </div>
                 </div>
@@ -174,7 +207,7 @@
                       <div class="s-accented-section accented-text">
                         <div class="s-item-text accented-style">Engage yourself in applied games</div>
                         <div class="s-item-subtext">
-                          <span class="lower-text">Don’t just learn the theory behind Go, play it too! </span>
+                          <span class="lower-text">Don't just learn the theory behind Go, play it too! </span>
                           <span class="lower-text-alt">Fun tournaments alongside practice will keep you engaged.</span>
                         </div>
                       </div>
