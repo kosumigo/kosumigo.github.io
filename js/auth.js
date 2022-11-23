@@ -48,7 +48,7 @@ onAuthStateChanged(auth, (user) => {
           new ErrorToast("Could not send verification email", cleanError(error), 5000);
         });
     }
-  } else if (window.location.pathname != "/dashboard/login.html" && window.location.pathname != "/dashboard/signup.html") {
+  } else if (window.location.pathname != "/dashboard/login.html" && window.location.pathname != "/dashboard/signup.html" && window.location.pathname != "/dashboard/reset-password.html") {
     new Toast("Sorry, you must be logged in to access this page", "default", 2000, "/img/icon/toast/error-icon.svg", "./login.html");
   }
 });
@@ -145,3 +145,10 @@ $("[data-auth-role='logoutprompt']").click(function () {
 $(document.body).on("click", "[data-auth-role='logout'], .data-auth-logout", function () {
   signOut(auth);
 });
+
+$("[data-auth-role='to-reset-password']").click(function () {
+  window.location.href = "/dashboard/reset-password.html?reset-email=" + $('[data-auth-role="email-input"]').val();
+});
+if (params.has("reset-email")) {
+  $('[data-auth-role="email-input"], [data-auth-role="reset-src-email"]').val(params.get("reset-email"));
+}
