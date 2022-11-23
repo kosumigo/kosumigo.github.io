@@ -1050,6 +1050,13 @@ hr.classtype-option-hr {
   opacity: 0.8;
   font-weight: 500;
 }
+.classtype-option-description {
+  font-size: 0.9em;
+  margin-top: 10px;
+  opacity: 0.8;
+  font-weight: 500;
+  line-height: 1.2em;
+}
 @media (max-width: 500px) {
   #prompt-title {
     font-size: 42px;
