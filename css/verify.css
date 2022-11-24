@@ -41,6 +41,7 @@ html {
   font-size: 16px;
   margin-bottom: 20px;
 }
+
 .input-pair {
   margin: 10px 0;
 }
@@ -154,8 +155,10 @@ a[data-auth-role],
   text-decoration: none;
   cursor: pointer;
 }
-[data-auth-role="email"] {
+[data-auth-role="params-email"] {
   color: var(--text-primary);
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 #verify-art {
   width: 300px;
@@ -197,4 +200,43 @@ body {
   #onboard-container {
     width: 500px;
   }
+}
+#small-art-icon {
+  height: auto;
+  width: 200px;
+  margin: 0 auto;
+}
+*:not(#small-art-icon) > #small-art-icon {
+  margin-bottom: 20px;
+}
+#send-button,
+#change-email-button {
+  margin-top: 20px;
+  color: var(--text-primary);
+  border-radius: 10px;
+  border: none;
+  height: 45px;
+  cursor: pointer;
+  font-weight: 300;
+  transition: background-color 0.2s;
+}
+#send-button {
+  background: linear-gradient(40deg, var(--login-accent-2) 0%, var(--login-accent) 100%);
+  background-color: var(--login-accent);
+  width: calc(100% - 45px - 10px);
+  margin-left: 10px;
+  font-size: 16px;
+}
+#change-email-button {
+  height: 45px;
+  width: 45px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  background: #ffffff40;
+  background-image: url(../img/icon/back-icon.png);
+  background-image: url(../img/icon/back-icon.svg);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center;
+  transition: background-color 0.2s;
 }

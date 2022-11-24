@@ -77,7 +77,8 @@ input[type="password"]:focus {
 input[type="text"]::placeholder {
   color: var(--login-secondary);
 }
-#reset-password-button {
+#reset-password-button,
+#to-dashboard-button {
   background: linear-gradient(40deg, var(--login-accent-2) 0%, var(--login-accent) 100%);
   background-color: var(--login-accent);
   color: var(--text-primary);

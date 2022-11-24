@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
 import { getFirestore, doc, collection, addDoc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js";
-import { getAuth, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, verifyPasswordResetCode, confirmPasswordReset } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
+import { getAuth, updateProfile, applyActionCode, signOut, deleteUser, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, verifyPasswordResetCode, confirmPasswordReset } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -26,30 +26,40 @@ const auth = getAuth(app);
 const analytics = getAnalytics();
 var user;
 // setup firebase authentication
+$('[data-auth-role="params-email"]').text(params.get("email"));
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    /**  VERIFY  **/
-    $('[data-auth-role="email"]').text(user.email);
     /**  AUTH  **/
+    $('[data-auth-role="email"]').text(user.email);
+    if (!params.has("email")) {
+      $('[data-auth-role="params-email"]').text(user.email);
+    }
     if (user.emailVerified) {
-      if (window.location.pathname != "/dashboard/") {
+      if (window.location.pathname != "/dashboard/" && window.location.pathname != "/dashboard/reset.html") {
         window.location.href = "/dashboard";
       }
-    } else if (window.location.pathname != "/dashboard/verify.html") {
-      new Toast("Please verify your email address to access the dashboard", "default", 1000, "/img/icon/toast/error-icon.svg", "/dashboard/verify.html");
+    } else if (window.location.pathname != "/dashboard/verify.html" && window.location.pathname != "/dashboard/signup.html" && window.location.pathname != "/dashboard/verified.html") {
+      new Toast("Please verify your email address to access this page", "default", 1000, "/img/icon/toast/error-icon.svg", "/dashboard/verify.html");
     } else {
       /**  VERIFY  **/
-      sendEmailVerification(user, { url: "https://kosumigo.github.io/dashboard" })
-        .then(() => {
-          $('[data-auth-role="verify-text"').text("Email instructions sent");
-          new Toast("Verification email sent", "default", 3000, "/img/icon/toast/success-icon.svg");
-        })
-        .catch((error) => {
-          new ErrorToast("Could not send verification email", cleanError(error), 5000);
-        });
+      // wait for send button click
+      $("[data-auth-role='send-verification']").click(function () {
+        sendEmailVerification(user, { url: "https://kosumigo.github.io/dashboard/" })
+          .then(() => {
+            $('[data-auth-role="verify-part"').toggle();
+            new Toast("Verification email sent", "default", 3000, "/img/icon/toast/success-icon.svg");
+          })
+          .catch((error) => {
+            new ErrorToast("Could not send verification email", cleanError(error), 5000);
+          });
+      });
     }
-  } else if (window.location.pathname != "/dashboard/login.html" && window.location.pathname != "/dashboard/signup.html" && window.location.pathname != "/dashboard/forgot-password.html" && window.location.pathname != "/dashboard/reset.html") {
+  } else if (window.location.pathname != "/dashboard/login.html" && window.location.pathname != "/dashboard/signup.html" && window.location.pathname != "/dashboard/forgot-password.html" && window.location.pathname != "/dashboard/reset.html" && window.location.pathname != "/dashboard/verify.html" && window.location.pathname != "/dashboard/verified.html") {
     new Toast("Sorry, you must be logged in to access this page", "default", 2000, "/img/icon/toast/error-icon.svg", "./login.html");
+  } else if (window.location.pathname == "/dashboard/verify.html") {
+    setTimeout(function () {
+      window.location.href = "/dashboard";
+    }, 2000);
   }
 });
 
@@ -58,46 +68,32 @@ function userDoc() {
   return getDoc(doc(db, "users", user.uid));
 }
 /**  AUTH UTIL  **/
+const cleanErrors = {
+  "auth/invalid-email": "Invalid email",
+  "auth/user-disabled": "User disabled",
+  "auth/user-not-found": "User not found",
+  "auth/wrong-password": "Incorrect password",
+  "auth/email-already-in-use": "Email already in use",
+  "auth/weak-password": "Password is too weak",
+  "auth/operation-not-allowed": "Operation not allowed",
+  "auth/too-many-requests": "Too many requests. Please wait before trying again",
+  "auth/invalid-credential": "Invalid credential",
+  "auth/invalid-verification-code": "Invalid verification code",
+  "auth/invalid-verification-id": "Invalid verification ID",
+  "auth/missing-verification-code": "Missing verification code",
+  "auth/missing-verification-id": "Missing verification ID",
+  "auth/credential-already-in-use": "Credential already in use",
+  "auth/missing-email": "Email is missing",
+  "auth/missing-password": "Password is missing",
+  "auth/invalid-action-code": "Invalid action code",
+};
 function cleanError(error) {
-  switch (error.code) {
-    case "auth/invalid-email":
-      return "Invalid email";
-    case "auth/user-disabled":
-      return "User disabled";
-    case "auth/user-not-found":
-      return "User not found";
-    case "auth/wrong-password":
-      return "Incorrect password";
-    case "auth/email-already-in-use":
-      return "Email already in use";
-    case "auth/weak-password":
-      return "Password is too weak";
-    case "auth/operation-not-allowed":
-      return "Operation not allowed";
-    case "auth/too-many-requests":
-      return "Too many requests";
-    case "auth/invalid-credential":
-      return "Invalid credential";
-    case "auth/invalid-verification-code":
-      return "Invalid verification code";
-    case "auth/invalid-verification-id":
-      return "Invalid verification ID";
-    case "auth/missing-verification-code":
-      return "Missing verification code";
-    case "auth/missing-verification-id":
-      return "Missing verification ID";
-    case "auth/credential-already-in-use":
-      return "Credential already in use";
-    case "auth/missing-email":
-      return "Email is missing";
-    case "auth/missing-password":
-      return "Password is missing";
-    case "auth/invalid-action-code":
-      return "Invalid action code";
-    default:
-      return error.message.replace("Error ", "");
+  if (cleanErrors[error.code]) {
+    return cleanErrors[error.code];
   }
+  return error.message.replace("Error ", "");
 }
+
 /**  SIGNUP  **/
 $('[data-auth-role="agree-to-terms"]').change(function () {
   if ($(this).prop("checked")) {
@@ -127,7 +123,12 @@ $('[data-auth-role="create-account"').click(function () {
           { merge: true }
         )
           .then(() => {
-            window.location = "/dashboard/verify.html";
+            // set user display name
+            updateProfile(user, {
+              displayName: $('[data-auth-role="name"]').val(),
+            }).then(() => {
+              window.location = "/dashboard/verify.html?email=" + encodeURIComponent(email);
+            });
           })
           .catch((error) => {
             new ErrorToast("Error creating user document", cleanError(error), 5000);
@@ -163,9 +164,13 @@ $("[data-auth-role='logoutprompt']").click(function () {
 $(document.body).on("click", "[data-auth-role='logout'], .data-auth-logout", function () {
   signOut(auth);
 });
+/**  DASH LINKS  **/
+$("[data-auth-role='to-dashboard']").click(function () {
+  window.location.href = "/dashboard/";
+});
 /**  PASSWORD RESET PAGES  **/
 $("[data-auth-role='to-forgot-password']").click(function () {
-  window.location.href = "/dashboard/forgot-password.html?reset-email=" + $('[data-auth-role="email-input"]').val();
+  window.location.href = "/dashboard/forgot-password.html?reset-email=" + encodeURIComponent($('[data-auth-role="email-input"]').val());
 });
 $("[data-auth-role='forgot-password']").click(function () {
   let email = $('[data-auth-role="email-input"]').val();
@@ -188,7 +193,7 @@ if (params.has("reset-email")) {
 /**  CHOOSE NEW PASSWORD (reset.html)  **/
 
 if (window.location.pathname == "/dashboard/reset.html") {
-  if (params.has("oobCode")) {
+  if (params.has("oobCode") && params.has("mode") && params.get("mode") == "resetPassword") {
     let oobCode = params.get("oobCode");
     verifyPasswordResetCode(auth, oobCode)
       .then((email) => {
@@ -227,3 +232,34 @@ if (window.location.pathname == "/dashboard/reset.html") {
     new Toast("Invalid password reset code. Returning to login", "default", 5000, "/img/icon/toast/warning-icon.svg", "/dashboard/login.html");
   }
 }
+
+/**  VERIFY EMAIL FROM OOBCODE (verified.html)  **/
+if (window.location.pathname == "/dashboard/verified.html") {
+  if (params.has("oobCode") && params.has("mode") && params.get("mode") == "verifyEmail") {
+    let oobCode = params.get("oobCode");
+    applyActionCode(auth, oobCode)
+      .then(() => {
+        $('[data-auth-role="verified-part"]').toggle();
+      })
+      .catch((error) => {
+        new ErrorToast("Error verifying email", cleanError(error), 5000);
+      });
+  } else {
+    new Toast("Invalid email verification code. Returning to login", "default", 5000, "/img/icon/toast/warning-icon.svg", "/dashboard/login.html");
+  }
+}
+
+/**  CHANGE EMAIL  **/
+$("[data-auth-role='change-email']").click(function () {
+  // delete account and redirect to login
+  deleteUser(auth.currentUser)
+    .then(() => {
+      new Toast("Deleted account instance, returning to signup", "default", 1500, "/img/icon/toast/success-icon.svg", "/dashboard/signup.html");
+    })
+    .catch((error) => {
+      new ErrorToast("Error deleting account with current email, signing out instead", cleanError(error), 2000, "/dashboard/signup.html");
+      setTimeout(() => {
+        signOut(auth);
+      }, 2000);
+    });
+});

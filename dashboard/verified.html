@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="../img/icon/logo-small-64.png" type="image/x-icon" />
-    <title>Kosumi Go | Login</title>
+    <title>Kosumi Go | Password Reset</title>
     <link rel="stylesheet" href="../css/common.css" />
     <link rel="stylesheet" href="../css/util.css" />
-    <link rel="stylesheet" href="../css/verify.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
     <meta name="apple-mobile-web-app-status-bar" content="#3FBCAE" />
     <meta name="theme-color" content="#3CADC6" />
     <!-- Search Engine -->
@@ -35,41 +35,35 @@
       <div class="toast-overlay" style="animation: fadeIn 0.5s forwards"></div>
       <div class="toast default" style="animation: slideIn 0.5s forwards"><img src="/img/icon/toast/error-icon.svg" class="toast-icon" alt="Toast Popup Icon" />Sorry, Javascript must be enabled for this page to work properly</div>
     </noscript>
-    <div id="recaptcha-container"></div>
     <div id="onboard-container" class="flex-column">
       <div id="org-title" class="flex-row flex-nowrap flex-center" href="/">
         <img id="org-icon" src="../img/icon/login/onboard-small-icon.png" />
         <div id="org-name">Kosumi Go School</div>
       </div>
-      <div id="login-box" class="flex-column">
-        <div data-auth-role="verify-part" class="flex-column">
-          <!-- <object id="small-art-icon" type="image/svg+xml" data="../img/icon/small-art/Mailbox-Alt.svg"> -->
-          <img id="small-art-icon" src="../img/icon/small-art/Mailbox-Alt.png" alt="Sent Icon" />
+      <form id="reset-box" class="flex-column" action="/dashboard/">
+        <div data-auth-role="verified-part" class="flex-column">
+          <!-- <object id="small-art-icon" type="image/svg+xml" data="../img/icon/small-art/Letter-Alt.svg"> -->
+          <img id="small-art-icon" src="../img/icon/small-art/Letter-Alt.png" alt="Reset Icon" />
           <!-- </object> -->
-          <div id="login-text" class="fill-width">
-            <div data-auth-role="verify-text" class="login-text-primary">Verify your email</div>
-            <div class="login-text-secondary">Instructions will be sent to the address below</div>
-            <div data-auth-role="params-email" class="login-text-secondary"></div>
-            <div class="flex-row flex-nowrap">
-              <input data-auth-role="change-email" type="button" id="change-email-button" value="" title="Change Email" />
-              <input data-auth-role="send-verification" id="send-button" type="button" value="Send Verification Link" />
-            </div>
+          <div id="reset-text" class="fill-width">
+            <div class="reset-text-primary">Verifying Email</div>
+            <div class="reset-text-secondary" style="margin-bottom: 0">Please wait a moment while we update your account details. Please do not close this tab</div>
           </div>
         </div>
-        <div data-auth-role="verify-part" style="display: none" class="flex-column">
-          <!-- <object id="small-art-icon" type="image/svg+xml" data="../img/icon/small-art/Mail-Alt.svg"> -->
-          <img id="small-art-icon" src="../img/icon/small-art/Mail-Alt.png" alt="Sent Icon" />
+        <div data-auth-role="verified-part" class="flex-column" style="display: none">
+          <!-- <object id="small-art-icon" type="image/svg+xml" data="../img/icon/small-art/Letter.svg"> -->
+          <img id="small-art-icon" src="../img/icon/small-art/Letter.png" alt="Reset Icon" />
           <!-- </object> -->
-          <div id="login-text" class="fill-width">
-            <div data-auth-role="verify-text" class="login-text-primary">Email instructions sent</div>
-            <div class="login-text-secondary" style="margin-bottom: 0">Please follow the instructions sent to your inbox</div>
-            <!-- <div data-auth-role="params-email" class="login-text-secondary"></div> -->
+          <div id="reset-text" class="fill-width">
+            <div class="reset-text-primary">Email verified</div>
+            <div class="reset-text-secondary">You can continue to the dashboard or close this page</div>
           </div>
+          <input data-auth-role="to-dashboard" id="to-dashboard-button" type="button" value="Go to dashboard" />
         </div>
-      </div>
+      </form>
     </div>
   </body>
   <script src="../js/util.js"></script>
   <script type="module" src="../js/auth.js"></script>
-  <script src="../js/verify.js"></script>
+  <script src="../js/verified.js"></script>
 </html>
