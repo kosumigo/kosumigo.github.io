@@ -172,7 +172,7 @@ $("[data-auth-role='forgot-password']").click(function () {
   sendPasswordResetEmail(auth, email)
     .then(() => {
       // fill email into success page
-      $('[data-auth-role="reset-email"]').text(email);
+      $('[data-auth-role="forgot-email"]').text(email);
       // toggle to success contents
       $('[data-auth-role="forgot-password-part"]').toggle();
       new Toast("Password reset email sent", "default", 3000, "/img/icon/toast/success-icon.svg", "");
@@ -201,7 +201,10 @@ if (window.location.pathname == "/dashboard/reset.html") {
             if (password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/)) {
               confirmPasswordReset(auth, oobCode, password)
                 .then(() => {
-                  window.location.href = "/dashboard/login.html";
+                  //login with username and password
+                  signInWithEmailAndPassword(auth, email, password).then(() => {
+                    new Toast("Password reset successful. Signed in", "default", 3000, "/img/icon/toast/success-icon.svg", "/dashboard/");
+                  });
                 })
                 .catch((error) => {
                   new ErrorToast("Error resetting password", cleanError(error), 5000);
