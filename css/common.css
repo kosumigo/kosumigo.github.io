@@ -148,3 +148,6 @@ body {
   overflow-y: auto;
   position: relative;
 }
+html {
+  height: 100%;
+}
