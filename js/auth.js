@@ -103,11 +103,12 @@ $('[data-auth-role="agree-to-terms"]').change(function () {
   }
 });
 $('[data-auth-role="create-account"').click(function () {
+  let email = $('[data-auth-role="email-input"]').val(),
+    password = $('[data-auth-role="password-input"]').val(),
+    name = $('[data-auth-role="name"]').val();
   if ($(this).hasClass("disabled")) {
     new Toast("You must agree to the terms and conditions to create an account", "default", 5000, "/img/icon/toast/warning-icon.svg", "");
-  } else {
-    let email = $('[data-auth-role="email-input"]').val(),
-      password = $('[data-auth-role="password-input"]').val();
+  } else if (email && password && name) {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         user = userCredential.user;
@@ -115,7 +116,7 @@ $('[data-auth-role="create-account"').click(function () {
         setDoc(
           doc(db, "users", user.uid),
           {
-            name: $('[data-auth-role="name"]').val(),
+            name: name,
             email: email,
             uid: user.uid,
             created: new Date().getTime(),
@@ -137,6 +138,8 @@ $('[data-auth-role="create-account"').click(function () {
       .catch((error) => {
         new ErrorToast("Error creating account", cleanError(error), 5000);
       });
+  } else {
+    new Toast("Please fill in all fields", "default", 5000, "/img/icon/toast/warning-icon.svg", "");
   }
 });
 
