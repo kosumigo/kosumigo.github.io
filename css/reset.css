@@ -32,6 +32,8 @@ html {
 .reset-text-primary {
   color: var(--text-primary);
   font-size: 30px;
+}
+.reset-text-primary {
   margin-bottom: 20px;
 }
 #reset-email {
