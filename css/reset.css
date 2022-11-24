@@ -137,9 +137,9 @@ a[data-auth-role],
   }
 }
 html {
-  background-image: url(../img/reset-accents.png);
+  background-image: url(../img/login-accents.png);
   /* background-position: bottom center; */
-  /* background-image: url(../img/reset-accents.svg); */
+  /* background-image: url(../img/login-accents.svg); */
 }
 body {
   padding: 0 !important;

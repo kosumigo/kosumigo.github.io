@@ -92,6 +92,8 @@ function cleanError(error) {
       return "Email is missing";
     case "auth/missing-password":
       return "Password is missing";
+    case "auth/invalid-action-code":
+      return "Invalid action code";
     default:
       return error.message.replace("Error ", "");
   }
@@ -214,6 +216,9 @@ if (window.location.pathname == "/dashboard/reset.html") {
       })
       .catch((error) => {
         new ErrorToast("Error verifying password reset code", cleanError(error), 5000);
+        setTimeout(() => {
+          window.location.href = "/dashboard/login.html";
+        }, 5000);
       });
   } else {
     new Toast("Invalid password reset code. Returning to login", "default", 5000, "/img/icon/toast/warning-icon.svg", "/dashboard/login.html");
