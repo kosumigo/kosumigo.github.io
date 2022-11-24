@@ -138,11 +138,13 @@ body {
   padding: 20px;
   margin: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  backdrop-filter: blur(20px);
+  /* backdrop-filter: blur(20px); */
+  overflow-y: auto;
+  position: relative;
 }
