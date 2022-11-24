@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="../img/icon/logo-small-64.png" type="image/x-icon" />
-    <title>Kosumi Go | Login</title>
+    <title>Kosumi Go | Password Reset</title>
     <link rel="stylesheet" href="../css/common.css" />
     <link rel="stylesheet" href="../css/util.css" />
-    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
     <meta name="apple-mobile-web-app-status-bar" content="#3FBCAE" />
     <meta name="theme-color" content="#3CADC6" />
     <!-- Search Engine -->
@@ -40,39 +40,33 @@
         <img id="org-icon" src="../img/icon/login/onboard-small-icon.png" />
         <div id="org-name">Kosumi Go School</div>
       </div>
-      <form id="login-box" class="flex-column">
-        <div id="login-text" class="fill-width">
-          <div class="login-text-primary">Sign In</div>
-          <div class="login-text-secondary">Login to manage your classes</div>
+      <form id="reset-box" class="flex-column">
+        <!-- <object id="small-art-icon" type="image/svg+xml" data="../img/icon/small-art/Keychain.svg"> -->
+        <img id="small-art-icon" src="../img/icon/small-art/Keychain.png" alt="Reset Icon" />
+        <!-- </object> -->
+        <div id="reset-text" class="fill-width">
+          <div class="reset-text-primary">Reset your password</div>
         </div>
         <div class="input-pair flex-row flex-nowrap">
-          <object title="Email Input" class="input-icon" data="../img/icon/login/email.svg" type="image/svg+xml">
-            <img src="../img/icon/login/email.png" />
-          </object>
-          <input data-auth-role="email-input" type="email" name="email" id="email-input" placeholder="Email" />
-        </div>
-        <div class="input-pair flex-row flex-nowrap">
-          <object title="Password Input" class="input-icon" data="../img/icon/login/password.svg" type="image/svg+xml">
+          <object title="New Password" class="input-icon" data="../img/icon/login/password.svg" type="image/svg+xml">
             <img src="../img/icon/login/password.png" />
           </object>
           <input data-auth-role="password-input" type="password" name="password" id="password-input" placeholder="Password" />
         </div>
-        <div class="input-pair flex-row flex-nowrap" style="margin-top: 20px">
-          <input data-auth-role="remember-user" type="checkbox" name="remember" id="remember-input" />
-          <label for="remember-input" class="checkbox-label flex-row flex-center flex-nowrap">
-            <div class="checkbox-icon"></div>
-            Remember Me</label
-          >
+        <div class="input-pair flex-row flex-nowrap">
+          <object title="Confirm New Password" class="input-icon" data="../img/icon/login/password.svg" type="image/svg+xml">
+            <img src="../img/icon/login/password.png" />
+          </object>
+          <input data-auth-role="confirm-password-input" type="password" name="confirm-password" id="confirm-password-input" placeholder="Confirm password" />
         </div>
-        <input data-auth-role="login" id="signin-button" type="button" value="Sign In" />
+        <div id="reset-text" class="fill-width">
+          <div class="reset-text-secondary">Minimum 8 characters. Must contain upper and lowercase letters, numbers, and symbols</div>
+        </div>
+        <input data-auth-role="reset-password" id="reset-password-button" type="button" value="Reset my password" />
       </form>
-      <div id="other-options" class="flex-column flex-center">
-        <div id="signup" class="flex-row flex-nowrap">Don't have an account?&nbsp;<a href="./signup.html">Sign Up</a></div>
-        <a data-auth-role="to-forgot-password" id="forgot-password" class="flex-row flex-center">Forgot Password?</a>
-      </div>
     </div>
   </body>
   <script src="../js/util.js"></script>
   <script type="module" src="../js/auth.js"></script>
-  <script src="../js/login.js"></script>
+  <script src="../js/reset.js"></script>
 </html>

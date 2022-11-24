@@ -11,7 +11,7 @@ html {
   max-width: 500px;
   padding: 15px;
 }
-#reset-box {
+#forgot-box {
   background-color: var(--login-box-bg);
   padding: 40px 80px;
   border-radius: 20px;
@@ -29,28 +29,28 @@ html {
   margin-left: 20px;
 }
 #org-name,
-.reset-text-primary {
+.forgot-text-primary {
   color: var(--text-primary);
   font-size: 30px;
-  margin-bottom: 20px;
 }
-#reset-email {
+#forgot-email {
   color: var(--text-primary);
   font-size: 18px;
 }
-.reset-text-secondary {
+.forgot-text-primary {
+}
+.forgot-text-secondary {
   color: var(--login-secondary);
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 20px;
   font-size: 16px;
+  margin-bottom: 20px;
 }
 .input-pair {
   margin: 10px 0;
 }
 
 input[type="text"],
-input[type="email"],
-input[type="password"] {
+input[type="email"] {
   border-radius: 7px;
   border: solid 1px var(--login-secondary);
   transition: border-color 0.2s;
@@ -75,7 +75,7 @@ input[type="password"]:focus {
 input[type="text"]::placeholder {
   color: var(--login-secondary);
 }
-#reset-password-button {
+#forgot-password-button {
   background: linear-gradient(40deg, var(--login-accent-2) 0%, var(--login-accent) 100%);
   background-color: var(--login-accent);
   color: var(--text-primary);
@@ -129,7 +129,7 @@ a[data-auth-role],
   body {
     background-size: cover;
   }
-  #reset-box {
+  #forgot-box {
     background: none;
     backdrop-filter: none;
     padding: 20px;
@@ -137,9 +137,9 @@ a[data-auth-role],
   }
 }
 html {
-  background-image: url(../img/reset-accents.png);
+  background-image: url(../img/forgot-accents.png);
   /* background-position: bottom center; */
-  /* background-image: url(../img/reset-accents.svg); */
+  /* background-image: url(../img/forgot-accents.svg); */
 }
 body {
   padding: 0 !important;
