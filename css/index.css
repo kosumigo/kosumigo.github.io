@@ -32,7 +32,7 @@
 html {
   margin: 0px;
   padding: 0px;
-  width: 100vw;
+  width: 100%;
   position: fixed;
   font-family: "Montserrat", sans-serif;
   font-size: 24px;
@@ -62,7 +62,7 @@ body {
 header,
 #lower,
 #lower > * {
-  width: 100vw;
+  width: 100%;
   box-sizing: border-box;
 }
 #lower {

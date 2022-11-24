@@ -117,5 +117,6 @@ $(document.body).on("click", "#prompt-overlay", function () {
     .add(this)
     .animate({ opacity: 0 }, 250, function () {
       $(this).remove();
+      $("body").attr("style", "");
     });
 });
