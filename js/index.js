@@ -37,35 +37,6 @@ class Meeting {
       </div>`;
   }
 }
-// $("#learn-section").click(function () {
-//   $.getJSON("./data/meetings.json")
-//     .then((data) => {
-//       $("#meeting-cards").empty();
-//       for (meeting of data) {
-//         var m = new Meeting(meeting);
-//         $("#meeting-cards").append(m.getHTML(m.showbutton));
-//       }
-//       $(".meeting-map-button").each(function () {
-//         var thisPopup = $(this);
-//         thisPopup.colorbox({
-//           iframe: true,
-//           innerWidth: Math.min(600, $(window).width() - 20),
-//           innerHeight: Math.min(500, $(window).width() - 40),
-//           opacity: 0.7,
-//           href: thisPopup.attr("href") + "&ie=UTF8&t=&output=embed",
-//         });
-//       });
-//       //SHHHH THIS ISNT FOR LOOKS WDYM
-//       setTimeout(function () {
-//         $("[loadshimmer]").removeAttr("loadshimmer");
-//         $("[loadshimmerslow]").removeAttr("loadshimmerslow");
-//         $("[loadshimmerbg]").removeAttr("loadshimmerbg");
-//       }, 700);
-//     })
-//     .catch((error) => {
-//       console.error("Error getting meetings JSON:", error.error);
-//     });
-// });
 
 // listen for scroll, then set theme bar color if the scroll has readched the top of #storyline-nav scrolltop
 $(document.body).scroll(function () {

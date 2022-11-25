@@ -823,7 +823,7 @@ footer span {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   box-sizing: border-box;
   margin-top: 20px;
 }
@@ -833,8 +833,6 @@ footer span {
   max-width: 100%;
   flex-grow: 0;
   flex-shrink: 1;
-  flex-basis: 100px;
-  flex-basis: 500px;
   display: flex;
   flex-flow: row nowrap;
   box-sizing: border-box;
@@ -844,18 +842,26 @@ footer span {
   border-radius: 10px;
   border: solid 1px var(--secondary-accent-transparent);
   padding: 10px;
+  /* new */
+  display: block;
+  margin: 10px;
+  flex-basis: 300px;
+  flex-grow: 1;
 }
 .team-member-img {
   border-radius: 7px;
   height: 100%;
   max-height: 128px;
   margin-right: 20px;
+  margin-bottom: 20px;
+  float: left;
 }
 .team-member-name {
   font-size: 1.25em;
   font-weight: bold;
 }
-.team-member-quote {
+.team-member-quote,
+.team-member-info {
   margin-top: 10px;
   font-size: 0.75em;
   filter: saturate(0);
