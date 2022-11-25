@@ -5,6 +5,7 @@ $("#sections-nav > li").click(function () {
   $(".storyline-content > div").removeClass("active");
   $("#" + id + "-content").addClass("active");
   $("#lower-storyline").attr("section", id);
+  $(document.body).animate({ scrollTop: "+=" + ($("#lower-content-container").offset().top + 25) }, 500);
 });
 $(".footer-item").click(function () {
   window.location.href = $(this).attr("href");
