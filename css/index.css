@@ -906,6 +906,8 @@ footer span {
   align-items: center;
   pointer-events: none;
   z-index: 1000001;
+  /* max-height: 100%;
+  overflow-y: auto; */
 }
 #prompt-box {
   background-color: var(--bg);
@@ -920,6 +922,9 @@ footer span {
   background-repeat: no-repeat;
   background-position: center center;
   border: solid 2px var(--border-faded);
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 #prompt-buttons {
   display: flex;
