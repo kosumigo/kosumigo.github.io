@@ -845,13 +845,16 @@ footer span {
   /* new */
   display: block;
   margin: 10px;
-  flex-basis: 300px;
+  flex-basis: 350px;
   flex-grow: 1;
 }
 .team-member-img {
   border-radius: 7px;
   height: 50vw;
   max-height: 90px;
+  max-width: 90px;
+  white-space: wrap;
+  font-size: 0.75em;
   margin-right: 15px;
   margin-bottom: 15px;
   float: left;
@@ -864,7 +867,7 @@ footer span {
 .team-member-info {
   margin-top: 10px;
   font-size: 0.75em;
-  filter: saturate(0);
+  color: #a4a4a4;
 }
 .team-member-quote::before,
 .team-member-quote::after {
