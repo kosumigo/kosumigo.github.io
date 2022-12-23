@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="img/icon/logo-small-64.png" type="image/x-icon" />
     <title>Kosumi Go | Make Meetings JSON</title>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Flow+Rounded:wght@400&family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;500;700;800;900&family=Consolas:wght@400;500;700&family=Roboto:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap");
+      @import url("//fonts.googleapis.com/css2?family=Flow+Rounded:wght@400&family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;500;700;800;900&family=Consolas:wght@400;500;700&family=Roboto:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap");
 
       :root {
         --bg: #141414;
@@ -120,12 +120,7 @@
         max-width: 700px;
       }
       .accented-style-dark {
-        background: linear-gradient(
-          93.8deg,
-          hsl(29, 100%, 45%) 0%,
-          hsl(51, 100%, 45%) 94.44%,
-          hsla(61, 100%, 45%, 0.7) 94.44%
-        );
+        background: linear-gradient(93.8deg, hsl(29, 100%, 45%) 0%, hsl(51, 100%, 45%) 94.44%, hsla(61, 100%, 45%, 0.7) 94.44%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -220,12 +215,7 @@
       }
     });
     $("#save-button").click(function () {
-      if (
-        $("#start").val() &&
-        $("#end").val() &&
-        $("#date").val() &&
-        ($("#map-link").val() || !$("#show-button").is(":checked"))
-      ) {
+      if ($("#start").val() && $("#end").val() && $("#date").val() && ($("#map-link").val() || !$("#show-button").is(":checked"))) {
         let startTime = new Date($("#date").val()).setYear(2022),
           endTime = new Date($("#date").val()).setYear(2022);
         startTime.setHours($("#start").val().split(":")[0]);
@@ -244,12 +234,7 @@
           .then((response) => {
             response.push(data);
             console.log(response);
-            window.open(
-              `https://sander.vonk.one/dev/rawviewer.html?${encodeURIComponent(
-                JSON.stringify(response, null, "\t")
-              )}`,
-              ""
-            );
+            window.open(`https://sander.vonk.one/dev/rawviewer.html?${encodeURIComponent(JSON.stringify(response, null, "\t"))}`, "");
           })
           .catch((error) => {
             console.error("Error getting meetings JSON:", error.error);

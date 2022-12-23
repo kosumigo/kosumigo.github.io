@@ -151,3 +151,21 @@ body {
 html {
   height: 100%;
 }
+/* outlinks */
+a[href^="http"]:not([href*="kosumigo.github.io/"])::after, a[href^="//"]:not([href*="kosumigo.github.io/"])::after
+{
+  background-image: url("/img/icon/out-link.png");
+  background-image: url("/img/icon/out-link.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "​";
+  margin-left: 0.25em;
+  padding-left: 1em;
+  text-decoration: none !important;
+}
+
+a.alt-linkout[href^="http"]:not([href*="kosumigo.github.io/"])::after, a.alt-linkout[href^="//"]:not([href*="kosumigo.github.io/"])::after, a[href^="http"]:not([href*="kosumigo.github.io/"]):visited::after, a[href^="//"]:not([href*="kosumigo.github.io/"]):visited::after
+{
+  background-image: url("/img/icon/out-link-alt.png");
+  background-image: url("/img/icon/out-link-alt.svg");
+}

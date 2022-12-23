@@ -8,7 +8,7 @@
 
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Flow+Rounded&family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;500;700;800;900&family=Consolas:wght@400;500;700&family=Roboto:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap");
+@import url("//fonts.googleapis.com/css2?family=Flow+Rounded&family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;500;700;800;900&family=Consolas:wght@400;500;700&family=Roboto:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap");
 
 :root {
   --bg: #141414;
@@ -186,6 +186,8 @@ header {
   background: #ffffff1d;
   backdrop-filter: blur(5px);
   margin-left: 20px;
+  color: var(--secondary-bg);
+  text-decoration: none;
 }
 #header-stats {
   margin-top: 45px;
@@ -515,7 +517,8 @@ form > * {
   overflow: hidden;
   box-sizing: border-box;
   background-color: var(--bg);
-  background-image: url(../img/accents.svg);
+  /* background-image: url(../img/accents.svg); */
+  background-image: url(../img/accents.png);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1120,4 +1123,21 @@ hr.classtype-option-hr {
   .classtypes-container {
     flex-flow: column nowrap;
   }
+}
+a[href^="http"]:not([href*="kosumigo.github.io/"])::after, a[href^="//"]:not([href*="kosumigo.github.io/"])::after
+{
+  background-image: url("/img/icon/out-link.png");
+  background-image: url("/img/icon/out-link.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "​";
+  margin-left: 0.25em;
+  padding-left: 1em;
+  text-decoration: none !important;
+}
+
+a.alt-linkout[href^="http"]:not([href*="kosumigo.github.io/"])::after, a.alt-linkout[href^="//"]:not([href*="kosumigo.github.io/"])::after, a[href^="http"]:not([href*="kosumigo.github.io/"]):visited::after, a[href^="//"]:not([href*="kosumigo.github.io/"]):visited::after
+{
+  background-image: url("/img/icon/out-link-alt.png");
+  background-image: url("/img/icon/out-link-alt.svg");
 }

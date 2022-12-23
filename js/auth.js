@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
 import { getFirestore, doc, collection, addDoc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js";
-import { getAuth, updateProfile, applyActionCode, signOut, deleteUser, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, verifyPasswordResetCode, confirmPasswordReset } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
+import { getAuth, updateProfile, applyActionCode, signOut, deleteUser, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, verifyPasswordResetCode, confirmPasswordReset, setPersistence, browserSessionPersistence, inMemoryPersistence } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -25,6 +25,20 @@ const db = getFirestore(app);
 const auth = getAuth(app);
 const analytics = getAnalytics();
 var user;
+
+// function for setting persistence
+function persistencePromise(is_persist) {
+  return new Promise((resolve, reject) => {
+    setPersistence(auth, is_persist ? inMemoryPersistence : browserSessionPersistence)
+      .then(() => {
+        resolve();
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
+}
+
 // setup firebase authentication
 $('[data-auth-role="params-email"]').text(params.get("email"));
 onAuthStateChanged(auth, (user) => {
@@ -147,14 +161,18 @@ $('[data-auth-role="create-account"').click(function () {
 $('[data-auth-role="login"]').click(function () {
   let email = $('[data-auth-role="email-input"]').val(),
     password = $('[data-auth-role="password-input"]').val();
-  signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      user = userCredential.user;
-      window.location = "./index.html";
-    })
-    .catch((error) => {
-      new ErrorToast("Error logging in", cleanError(error), 5000);
-    });
+  if (email && password) {
+    signInWithEmailAndPassword(auth, email, password, { remember: $("[data-auth-role='remember-user']").is(":checked") ? null : "sessionOnly" })
+      .then((userCredential) => {
+        user = userCredential.user;
+        window.location = "./index.html";
+      })
+      .catch((error) => {
+        new ErrorToast("Error logging in", cleanError(error), 5000);
+      });
+  } else {
+    new Toast("Please fill in all fields before logging in", "default", 5000, "/img/icon/toast/warning-icon.svg", "");
+  }
 });
 
 /**  AUTH PAGES  **/
@@ -177,17 +195,22 @@ $("[data-auth-role='to-forgot-password']").click(function () {
 });
 $("[data-auth-role='forgot-password']").click(function () {
   let email = $('[data-auth-role="email-input"]').val();
-  sendPasswordResetEmail(auth, email)
-    .then(() => {
-      // fill email into success page
-      $('[data-auth-role="forgot-email"]').text(email);
-      // toggle to success contents
-      $('[data-auth-role="forgot-password-part"]').toggle();
-      new Toast("Password reset email sent", "default", 3000, "/img/icon/toast/success-icon.svg", "");
-    })
-    .catch((error) => {
-      new ErrorToast("Error sending password reset email", cleanError(error), 5000);
-    });
+  //check if email is valid first
+  if (email && email.includes("@")) {
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        // fill email into success page
+        $('[data-auth-role="forgot-email"]').text(email);
+        // toggle to success contents
+        $('[data-auth-role="forgot-password-part"]').toggle();
+        new Toast("Password reset email sent", "default", 3000, "/img/icon/toast/success-icon.svg", "");
+      })
+      .catch((error) => {
+        new ErrorToast("Error sending password reset email", cleanError(error), 5000);
+      });
+  } else {
+    new Toast("Please enter a valid email address", "default", 5000, "/img/icon/toast/warning-icon.svg", "");
+  }
 });
 if (params.has("reset-email")) {
   $('[data-auth-role="email-input"], [data-auth-role="reset-src-email"]').val(params.get("reset-email"));
@@ -265,4 +288,12 @@ $("[data-auth-role='change-email']").click(function () {
         signOut(auth);
       }, 2000);
     });
+});
+
+//interpret any enter keypresses as a click on the submit button
+$("[data-auth-role='email-input'], [data-auth-role='password-input'], [data-auth-role='confirm-password-input']").on("keypress", function (e) {
+  if (e.which == 13) {
+    e.preventDefault();
+    $(this).closest("form, #onboard-container").find("[type='submit'], input[type='button']").click();
+  }
 });

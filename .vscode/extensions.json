@@ -1,9 +1,3 @@
 {
-  "recommendations": [
-    "aaron-bond.better-comments",
-    "ms-vsliveshare.vsliveshare",
-    "ms-vsliveshare.vsliveshare-pack",
-    "esbenp.prettier-vscode",
-    "ritwickdey.LiveServer"
-  ]
+  "recommendations": ["aaron-bond.better-comments", "esbenp.prettier-vscode", "ritwickdey.LiveServer"]
 }

@@ -1,0 +1,35 @@
+name: Deploy and Minify
+on:
+  push:
+    branches:
+      - main
+  release:
+    branch: main
+    types: [published]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout from main
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+      - name: add version numbers (commit hash)
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          find: "[-version-number-]"
+          replace: "${{github.sha}}"
+          exclude: "**/*.yml"
+          regex: false
+      #- name: Minify
+      #  uses: anthonyftwang/minify-action@v1.0.1
+      - name: commit to deployment
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: sync & minify '${{github.sha}}' from main
+          branch: deployed
+          skip_checkout: true
+          push_options: "--force"
+          commit_user_name: Sander Vonk
+          commit_user_email: sandervonk@users.noreply.github.com

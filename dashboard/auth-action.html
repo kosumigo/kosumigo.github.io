@@ -3,7 +3,7 @@
   <head>
     <title>Kosumi Go | Redirect</title>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Flow+Rounded:wght@400&family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;500;700;800;900&family=Consolas:wght@400;500;700&family=Roboto:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap");
+      @import url("//fonts.googleapis.com/css2?family=Flow+Rounded:wght@400&family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;500;700;800;900&family=Consolas:wght@400;500;700&family=Roboto:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap");
       html,
       body {
         overflow: hidden;
@@ -14,7 +14,7 @@
         align-items: center;
         color: #ffffff;
         font-family: "Montserrat", sans-serif;
-        white-space: nowrap;
+        text-align: center;
       }
       .accented-text {
         font-size: 50px;
@@ -33,18 +33,24 @@
     </style>
   </head>
   <body>
-    <p class="accented-style-dark accented-text">Redirecting to Auth Page</a></p>
+    <p id="redirect-text" class="accented-style-dark accented-text">Redirecting to Auth Page</a></p>
+    <noscript>
+      <style>#redirect-text{display:none}</style>
+      <p id="redirect-noscript" class="accented-style-dark accented-text">Cannot Redirect, please enable Javascript!</a></p>
+    </noscript>
   </body>
   <script>
     // redirect to either verified.html or reset.html depending on the mode URI paramater while keeping search parameters
     // for some reason the action url needs to be the same for all templates in firebase auth :(
     let url = new URL(window.location.href);
-    let mode = url.searchParams.get("mode");
-    if (mode == "resetPassword") {
-      window.location.href = "/dashboard/reset.html" + window.location.search;
-    } else if (mode == "verifyEmail") {
-      window.location.href = "/dashboard/verified.html" + window.location.search;
-    } else {
+    switch (url.searchParams.get("mode")) {
+      case "resetPassword":
+        window.location.href = "/dashboard/reset.html" + window.location.search;
+        break;
+      case "verifyEmail":
+        window.location.href = "/dashboard/verified.html" + window.location.search;
+        break;
+      default:
         window.location.href = "/dashboard/login.html" + window.location.search;
     }
   </script>

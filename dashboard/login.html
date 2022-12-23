@@ -67,26 +67,26 @@
           <object title="Email Input" class="input-icon" data="../img/icon/login/email.svg" type="image/svg+xml">
             <img src="../img/icon/login/email.png" />
           </object>
-          <input data-auth-role="email-input" type="email" name="email" id="email-input" placeholder="Email" />
+          <input tabindex="1" data-auth-role="email-input" type="email" name="email" id="email-input" placeholder="Email" />
         </div>
         <div class="input-pair flex-row flex-nowrap">
           <object title="Password Input" class="input-icon" data="../img/icon/login/password.svg" type="image/svg+xml">
             <img src="../img/icon/login/password.png" />
           </object>
-          <input data-auth-role="password-input" type="password" name="password" id="password-input" placeholder="Password" />
+          <input tabindex="2" data-auth-role="password-input" type="password" name="password" id="password-input" placeholder="Password" />
         </div>
         <div class="input-pair flex-row flex-nowrap" style="margin-top: 20px">
           <input data-auth-role="remember-user" type="checkbox" name="remember" id="remember-input" />
           <label for="remember-input" class="checkbox-label flex-row flex-center flex-nowrap">
-            <div class="checkbox-icon"></div>
+            <div tabindex="3" class="checkbox-icon"></div>
             Remember Me</label
           >
         </div>
-        <input data-auth-role="login" id="signin-button" type="button" value="Sign In" />
+        <input tabindex="4" data-auth-role="login" id="signin-button" type="button" value="Sign In" />
       </form>
       <div id="other-options" class="flex-column flex-center">
         <div id="signup" class="flex-row flex-nowrap">Don't have an account?&nbsp;<a href="./signup.html">Sign Up</a></div>
-        <a data-auth-role="to-forgot-password" id="forgot-password" class="flex-row flex-center">Forgot Password?</a>
+        <a tabindex="5" data-auth-role="to-forgot-password" id="forgot-password" class="flex-row flex-center">Forgot Password?</a>
       </div>
     </div>
   </body>
