@@ -8,6 +8,7 @@ on:
     types: [published]
   workflow_dispatch:
 jobs:
+  # build and minify
   build:
     runs-on: ubuntu-latest
     steps:
@@ -33,16 +34,19 @@ jobs:
           push_options: "--force"
           commit_user_name: Sander Vonk
           commit_user_email: sandervonk@users.noreply.github.com
+  # package to site
   package:
     runs-on: ubuntu-latest
     needs: build
-    - name: Build with Jekyll
-      uses: actions/jekyll-build-pages@v1
-      with:
-        source: ./
-        destination: ./_site
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v1
+    steps:
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+  # deploy site
   deploy:
     environment:
       name: github-pages
