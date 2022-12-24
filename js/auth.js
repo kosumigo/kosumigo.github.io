@@ -4,10 +4,8 @@ import { getFirestore, doc, collection, addDoc, setDoc, getDoc } from "https://w
 import { getAuth, updateProfile, applyActionCode, signOut, deleteUser, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, verifyPasswordResetCode, confirmPasswordReset, setPersistence, browserSessionPersistence, inMemoryPersistence } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
 // TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyA9HsjfAhwcTsRgoO65nUy0dAGOnBv1he4",
   authDomain: "kosumigo.firebaseapp.com",
