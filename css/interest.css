@@ -110,8 +110,8 @@ input[type="submit"]:disabled {
   color: #ffffff80;
   cursor: not-allowed;
 }
-@media (min-width: 600px) {
+@media (min-width: 360px) {
   input[type="submit"] {
-    margin-top: 20px;
+    /* fill width and change display */
   }
 }
