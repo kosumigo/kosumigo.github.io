@@ -1,0 +1,117 @@
+:root {
+  --primary: #e59e34;
+}
+form {
+  width: 100%;
+  margin-top: 20px;
+}
+
+body {
+  align-items: start;
+}
+.input-pair {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ffffff22;
+  background-color: #14141440;
+  backdrop-filter: blur(10px);
+  margin: 10px;
+  box-sizing: border-box;
+  font-size: 12pt;
+  border: solid 1px #ffffff60;
+  color: #ffffffcc;
+}
+.input-pair.invalid {
+  border-color: #e5573480;
+}
+.input-pair:focus-within {
+  border-color: #e59e3480;
+}
+.input-pair label {
+  margin-bottom: 5px;
+  font-size: 12pt;
+  opacity: 0.85;
+}
+.input-pair input {
+  width: 100%;
+  padding: 5px;
+  background-color: var(--primary-bg);
+  color: var(--on-primary-bg);
+  border: none;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  overflow-x: auto;
+  outline: none;
+  border-bottom: solid 1px #ffffff40;
+}
+/* add bottom border to text inputs in the form of an .input-border after it that transitions by scaling from the middle */
+input[type="text"].short,
+input[type="text"].short + .input-border,
+input[type="number"].short,
+input[type="number"].short + .input-border {
+  width: 75%;
+  max-width: 300px;
+}
+input[type="number"],
+input[type="number"] + .input-border {
+  width: 50px;
+}
+.input-border {
+  margin-top: -1px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary);
+  transform-origin: center;
+  transform: scaleX(0);
+  opacity: 0;
+  transition: transform 0.2s 0.2s, opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+.input-pair.invalid .input-border {
+  background-color: #e55734;
+}
+input[type="text"]:focus + .input-border,
+input[type="number"]:focus + .input-border,
+.input-pair.invalid .input-border {
+  transform: scaleX(1);
+  opacity: 0.66;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out, background-color 0.2s ease-in-out;
+}
+input[type="text"]:focus + .input-border,
+input[type="number"]:focus + .input-border {
+  background-color: var(--primary);
+}
+/* style submit button like google forms one */
+input[type="submit"] {
+  margin: 10px;
+  margin-top: 0;
+  width: fit-content;
+  padding: 10px 30px;
+  border-radius: 5px;
+  background-color: var(--primary);
+  color: var(--popup-bg);
+  border: none;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background-color 0.2s ease-out;
+  cursor: pointer;
+}
+input[type="submit"][disabled],
+input[type="submit"]:disabled {
+  background-color: #ffffff40;
+  color: #ffffff80;
+  cursor: not-allowed;
+}
+@media (min-width: 600px) {
+  input[type="submit"] {
+    margin-top: 20px;
+  }
+}
