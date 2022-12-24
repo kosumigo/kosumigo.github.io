@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -38,7 +38,7 @@ jobs:
       - name: commit to deployment
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: sync & minify '${{github.sha}}' from main
+          commit_message: minify and package commit hash ${{github.sha}} from main for deployment
           branch: deployed
           skip_checkout: true
           push_options: "--force"
