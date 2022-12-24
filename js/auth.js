@@ -297,5 +297,3 @@ $("[data-auth-role='email-input'], [data-auth-role='password-input'], [data-auth
     $(this).closest("form, #onboard-container").find("[type='submit'], input[type='button']").click();
   }
 });
-
-//tool to validate [data-role="email"] inputs for correctness and correspondingly update the closest ".input-pair" with a "valid" or "invalid" class

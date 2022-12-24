@@ -46,11 +46,11 @@
       }
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- <script src="https://www.jacklmoore.com/colorbox/jquery.colorbox.js"></script> -->
+    <!-- <script src="https://www.jacklmoore.com/colorbox/jquery.colorbox.js?v=[version-number]"></script> -->
     <link rel="stylesheet" href="css/util.css" />
     <!-- <link rel="stylesheet" href="https://www.jacklmoore.com/colorbox/example1/colorbox.css" /> -->
   </head>
-  <body style="overflow: hidden !important">
+  <body style="overflow: hidden !important" data-page-version="[-version-number-]">
     <div id="prompt-overlay"></div>
     <div id="prompt-container" class="active" style="position: fixed">
       <div id="prompt-box">
@@ -302,8 +302,9 @@
       <div class="footer-item" id="instagram-link" href="https://www.instagram.com/kosumigoschool/"></div>
       <span>Website by <a href="//sander.vonk.one/Projects/">Sander Vonk</a></span>
       <div class="footer-item" id="facebook-link" href="https://www.facebook.com/profile.php?id=100081977831709"></div>
+      <span style="display: none" data-role="version-num">[-version-number-]</span>
     </footer>
   </body>
-  <script src="js/util.js"></script>
-  <script src="js/index.js"></script>
+  <script src="js/util.js?v=[version-number]"></script>
+  <script src="js/index.js?v=[version-number]"></script>
 </html>

@@ -22,8 +22,8 @@ jobs:
           replace: "${{github.sha}}"
           exclude: "**/*.yml"
           regex: false
-      #- name: Minify
-      #  uses: anthonyftwang/minify-action@v1.0.1
+      - name: Minify
+        uses: anthonyftwang/minify-action@v1.0.1
       - name: commit to deployment
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
