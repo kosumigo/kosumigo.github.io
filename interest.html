@@ -14,12 +14,12 @@
     <div id="page-content">
       <div class="page-title accented-text accented-style">Interest Form</div>
       <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfsxEFCrgY21AYzPpxk8nUVDkoysmGCOSkXXYECYrUPr59eNg/formResponse" method="POST">
-        <div class="input-pair">
+        <div class="input-pair" data-required>
           <label for="name">Name</label>
           <input type="text" class="short" id="name" />
           <div class="input-border"></div>
         </div>
-        <div class="input-pair">
+        <div class="input-pair" data-required>
           <label for="email">Email</label>
           <input type="text" data-role="email" class="short" id="email" />
           <div class="input-border"></div>
@@ -29,23 +29,62 @@
           <input type="number" id="age" min="5" max="115" />
           <div class="input-border"></div>
         </div>
-        <div class="input-pair">
-          <label for="experience">Experience</label>
-          <input type="text" class="short" id="experience" />
-          <div class="input-border"></div>
+        <div class="input-pair" data-required>
+          <label for="experience">Previous Go Experience</label>
+          <div class="radio-group">
+            <input type="radio" name="class-slot" id="label1" />
+            <label for="label1">
+              <span class="radio"></span>
+              <span class="radio-label">Beginner (never played before)</span>
+            </label>
+          </div>
+          <div class="radio-group">
+            <input type="radio" name="class-slot" id="label2" />
+            <label for="label2">
+              <span class="radio"></span>
+              <span class="radio-label">Little (know the rules to Go)</span>
+            </label>
+          </div>
+          <div class="radio-group">
+            <input type="radio" name="class-slot" id="label3" />
+            <label for="label3">
+              <span class="radio"></span>
+              <span class="radio-label">More (played a few games)</span>
+            </label>
+          </div>
+          <div class="radio-group">
+            <input type="radio" name="class-slot" id="label4" />
+            <label for="label4">
+              <span class="radio"></span>
+              <span class="radio-label">Medium (played many games, ready to learn more advanced topics)</span>
+            </label>
+          </div>
         </div>
         <div class="input-pair">
-          <label for="class-slot">Class Slot</label>
-          <input type="text" class="short" id="class-slot" />
-          <div class="input-border"></div>
+          <label for="class-slot">Which time slot do you plan to attend?</label>
+          <div class="radio-group">
+            <input type="radio" name="class-slot" id="beg1" />
+            <label for="beg1">
+              <span class="radio"></span>
+              <span class="radio-label">Beginner 1 (Sunday 10-11 AM PST)</span>
+            </label>
+          </div>
+          <div class="radio-group">
+            <input type="radio" name="class-slot" id="beg2" />
+            <label for="beg2">
+              <span class="radio"></span>
+              <span class="radio-label">Beginner 2 (Saturday 3-4 PM PST)</span>
+            </label>
+          </div>
         </div>
         <div class="input-pair">
-          <label for="time-pref">Time Preference</label>
+          <label for="time-pref">Do you have another preferred time (we may consider adding popular suggestions)</label>
           <input type="text" class="short" id="time-pref" />
           <div class="input-border"></div>
         </div>
         <div class="input-pair">
-          <label for="referrer">Referrer</label>
+          <label for="referrer">If someone referred you, who?</label>
+          <span class="subtitle">Once referred, you must attend 1 paid lesson for your referrer to get their free lesson</span>
           <input type="text" class="short" id="referrer" />
           <div class="input-border"></div>
         </div>
@@ -55,7 +94,7 @@
           <div class="input-border"></div>
         </div>
         <div class="input-pair">
-          <label for="questions">Questions</label>
+          <label for="questions">Any questions?</label>
           <input type="text" id="questions" />
           <div class="input-border"></div>
         </div>

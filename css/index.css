@@ -1141,3 +1141,8 @@ a.alt-linkout[href^="http"]:not([href*="kosumigo.github.io/"])::after, a.alt-lin
   background-image: url("/img/icon/out-link-alt.png");
   background-image: url("/img/icon/out-link-alt.svg");
 }
+.lightback a[href^="http"]:not([href*="kosumigo.github.io/"])::after, .lightback a[href^="//"]:not([href*="kosumigo.github.io/"])::after
+{
+  background-image: url("/img/icon/out-link-light.png");
+  background-image: url("/img/icon/out-link-light.svg");
+}
