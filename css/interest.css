@@ -68,7 +68,8 @@ body {
 .input-pair.invalid {
   border-color: #e5573480;
 }
-.input-pair:focus-within {
+.input-pair:focus-within,
+.input-pair.active {
   border-color: #e59e3480;
 }
 .input-pair.invalid:focus-within {
@@ -159,7 +160,8 @@ input[type="submit"] {
   cursor: pointer;
 }
 input[type="submit"][disabled],
-input[type="submit"]:disabled {
+input[type="submit"]:disabled,
+input[type="submit"].disabled {
   background-color: #ffffff40;
   color: #ffffff80;
   cursor: not-allowed;

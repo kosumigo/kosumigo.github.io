@@ -40,17 +40,17 @@
           <input type="text" data-role="email" class="short" id="email" />
           <div class="input-border"></div>
         </div>
-        <div class="input-pair">
-          <label for="age">Age Group</label>
+        <div class="input-pair" data-required>
+          <label for="age-group">Age Group</label>
           <div class="radio-group">
-            <input type="radio" name="interest-source" id="age-18plus" />
+            <input type="radio" name="age-group" id="age-18plus" />
             <label for="age-18plus">
               <span class="radio"></span>
               <span class="radio-label">18 or above</span>
             </label>
           </div>
           <div class="radio-group">
-            <input type="radio" name="interest-source" id="age-under18" />
+            <input type="radio" name="age-group" id="age-under18" />
             <label for="age-under18">
               <span class="radio"></span>
               <span class="radio-label"
@@ -171,43 +171,9 @@
           <input type="text" id="questions" />
           <div class="input-border"></div>
         </div>
-        <input type="submit" value="Submit" disabled />
+        <input type="submit" value="Submit" class="disabled" />
       </form>
     </div>
   </body>
-  <script>
-    //tool to validate [data-role="email"] inputs for correctness and correspondingly update the closest ".input-pair" with a "valid" or "invalid" class
-
-    $("[data-role='email']").on("input change", function () {
-      // use a regular expression to check if the input is a valid email
-      let regex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
-      if ($(this).val() && regex.test($(this).val())) {
-        $(this).closest(".input-pair").removeClass("invalid").addClass("valid");
-      } else {
-        $(this).closest(".input-pair").removeClass("valid").addClass("invalid");
-      }
-    });
-
-    // when an input changes, check if all required inputs are valid, and if they are enable the submit button
-    $("[data-required]").on("input change", function () {
-      let all_valid = true;
-      $("[data-required]").each(function () {
-        if ($(this).hasClass("invalid")) {
-          all_valid = false;
-        }
-        // if the input is empty, it is invalid, or if it is a radio group and none of the radios are checked
-        else if (!$(this).find("input").val() || ($(this).find("input[type='radio']").length && !$(this).find("input[type='radio']:checked").length)) {
-          all_valid = false;
-        }
-        if (!$(this).find("input").val()) {
-          all_valid = false;
-        }
-      });
-      if (all_valid) {
-        $("input[type='submit']").prop("disabled", false);
-      } else {
-        $("input[type='submit']").prop("disabled", true);
-      }
-    });
-  </script>
+  <script src="js/interest.js?[-version-number-]"></script>
 </html>
