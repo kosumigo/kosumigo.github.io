@@ -1,6 +1,42 @@
 :root {
   --primary: #e59e34;
+  --bg: #141414;
+  --secondary-bg: #ffffff;
+  --secondary-accent: #e2e2e2;
+  --secondary-accent-transparent: #e2e2e2aa;
+  --border-faded: #9494944d;
+  --accent1: #eba419;
+  --accent2: #bc6b2c;
+  --text-primary: #ffffff;
+  --text-secondary: #ffaf38cc;
+  --on-secondary-bg: #141414;
+  --on-secondary-bg-alt: #14141466;
+  --lower-accent: #b2a481;
+  --sidebar-accent: #6d6142;
+  --shimmer-bg: #b2a481aa;
+  --shimmer-alt: #b2a481;
+  --shimmerbg-bg: #b2a48160;
+  --shimmerbg-alt: #b2a4816a;
 }
+a[href],
+a[onclick] {
+  color: var(--accent1);
+  text-decoration: underline;
+}
+a[href]:visited {
+  color: var(--accent2);
+}
+a[href]::after {
+  background-image: url("/img/icon/out-link.png");
+  background-image: url("/img/icon/out-link.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "​";
+  margin-left: 0.25em;
+  padding-left: 1em;
+  text-decoration: none !important;
+}
+
 form {
   width: 100%;
   margin-top: 20px;
@@ -8,17 +44,18 @@ form {
 
 body {
   align-items: start;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 .input-pair {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 8px;
   background-color: #ffffff22;
   background-color: #14141440;
   backdrop-filter: blur(10px);
-  margin: 10px;
+  margin: 20px;
   box-sizing: border-box;
   font-size: 16px;
   border: solid 1px #ffffff60;
@@ -164,6 +201,9 @@ input:-webkit-autofill:active {
 .radio-group {
   padding: 8px 0;
 }
+.radio-group:last-of-type {
+  padding-bottom: 0;
+}
 input[type="radio"] {
   display: none;
 }
@@ -187,6 +227,14 @@ input[type="radio"] + label > .radio {
 }
 input[type="radio"]:checked + label > .radio {
   border-color: #e59e3480;
+}
+input[type="radio"] + label > .radio-label {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.radio-label > span {
+  flex-shrink: 0;
 }
 input[type="radio"] + label > .radio::before {
   background-color: #ffffff80;
@@ -242,4 +290,46 @@ input[type="radio"]:checked + label > .radio:hover::after {
   /* align to the right */
   left: calc(100% - 20px);
   top: 15px;
+}
+#form-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+#form-description {
+  font-size: 14.5px;
+  margin-bottom: 12px;
+}
+#form-info-and-key {
+  border-top: 1px solid #ffffff40;
+  width: calc(100% + 40px);
+  margin-left: -20px;
+  margin-bottom: -20px;
+  background-color: #ffffff10;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  color: #e55734;
+  font-size: 14px;
+}
+#info-box {
+  padding: 0;
+  --bar-height: 10px;
+  overflow: hidden;
+}
+/* add a solid bar across the top using a ::before */
+#info-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--bar-height);
+  background-color: var(--primary);
+  opacity: 0.75;
+}
+#info-box-contents {
+  padding: 20px;
+  margin-top: calc(0 - var(--bar-height));
 }

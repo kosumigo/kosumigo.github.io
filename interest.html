@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="img/icon/logo-small-64.png" type="image/x-icon" />
-    <title>Kosumi Go | Page Title</title>
+    <title>Kosumi Go | Interest Form</title>
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/interest.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -14,6 +14,22 @@
     <div id="page-content">
       <div class="page-title accented-text accented-style">Interest Form</div>
       <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfsxEFCrgY21AYzPpxk8nUVDkoysmGCOSkXXYECYrUPr59eNg/formResponse" method="POST">
+        <div class="input-pair" id="info-box">
+          <div id="info-box-contents">
+            <div id="form-title">Online Kosumi Go School (KGS) New Student Interest Form</div>
+            <div id="form-description">
+              We are high school student-run non-profit that provides accessible Go lessons (taught by students who has had impressive results in world class tournaments), and strives to share the game and culture with everyone in the country! This means that we are trying to expand online, and we are in need of teachers and volunteers. Profits will go towards charity! <br /><br />
+              We appreciate your interest in Kosumi Go School, this is a non binding form that will add you to our elist for more information about our school.
+              <br /><br />
+              KGS holds weekly Go classes taught by high level Go players. Price: Free trials offered ($15/hr after trial)
+              <br /><br />
+              We will get back to you soon after this form is submitted, contact us for any questions!
+              <br />
+              You can email us at <a href="mailto:kosumigo@gmail.com">kosumigo@gmail.com</a>
+            </div>
+            <div id="form-info-and-key">* Indicates Required Questions</div>
+          </div>
+        </div>
         <div class="input-pair" data-required>
           <label for="name">Name</label>
           <input type="text" class="short" id="name" />
@@ -25,35 +41,35 @@
           <div class="input-border"></div>
         </div>
         <div class="input-pair">
-          <label for="age">Age</label>
+          <label for="age">Age Group</label>
           <input type="number" id="age" min="5" max="115" />
           <div class="input-border"></div>
         </div>
         <div class="input-pair" data-required>
           <label for="experience">Previous Go Experience</label>
           <div class="radio-group">
-            <input type="radio" name="class-slot" id="label1" />
+            <input type="radio" name="experience-level" id="label1" />
             <label for="label1">
               <span class="radio"></span>
               <span class="radio-label">Beginner (never played before)</span>
             </label>
           </div>
           <div class="radio-group">
-            <input type="radio" name="class-slot" id="label2" />
+            <input type="radio" name="experience-level" id="label2" />
             <label for="label2">
               <span class="radio"></span>
               <span class="radio-label">Little (know the rules to Go)</span>
             </label>
           </div>
           <div class="radio-group">
-            <input type="radio" name="class-slot" id="label3" />
+            <input type="radio" name="experience-level" id="label3" />
             <label for="label3">
               <span class="radio"></span>
               <span class="radio-label">More (played a few games)</span>
             </label>
           </div>
           <div class="radio-group">
-            <input type="radio" name="class-slot" id="label4" />
+            <input type="radio" name="experience-level" id="label4" />
             <label for="label4">
               <span class="radio"></span>
               <span class="radio-label">Medium (played many games, ready to learn more advanced topics)</span>
@@ -88,10 +104,49 @@
           <input type="text" class="short" id="referrer" />
           <div class="input-border"></div>
         </div>
-        <div class="input-pair">
-          <label for="interest-source">Interest Source</label>
-          <input type="text" class="short" id="interest-source" />
-          <div class="input-border"></div>
+        <div class="input-pair" data-required>
+          <label for="interest-source">Where did you hear about us?</label>
+          <div class="radio-group">
+            <input type="radio" name="interest-source" id="source-wechat" />
+            <label for="source-wechat">
+              <span class="radio"></span>
+              <span class="radio-label">Wechat</span>
+            </label>
+          </div>
+          <div class="radio-group">
+            <input type="radio" name="interest-source" id="source-flyer" />
+            <label for="source-flyer">
+              <span class="radio"></span>
+              <span class="radio-label">Flyers</span>
+            </label>
+          </div>
+          <div class="radio-group">
+            <input type="radio" name="interest-source" id="source-friendfamily" />
+            <label for="source-friendfamily">
+              <span class="radio"></span>
+              <span class="radio-label">Friends / Family</span>
+            </label>
+          </div>
+          <div class="radio-group">
+            <input type="radio" name="interest-source" id="source-school" />
+            <label for="source-school">
+              <span class="radio"></span>
+              <span class="radio-label">School</span>
+            </label>
+          </div>
+          <div class="radio-group">
+            <input type="radio" name="interest-source" id="source-other" />
+            <label for="source-other">
+              <span class="radio"></span>
+              <span class="radio-label"
+                ><span class="radio-label-text">Somewhere else:&nbsp;</span>
+                <div>
+                  <input type="text" class="short" id="interest-source-other" />
+                  <div class="input-border"></div>
+                </div>
+              </span>
+            </label>
+          </div>
         </div>
         <div class="input-pair">
           <label for="questions">Any questions?</label>
@@ -112,6 +167,28 @@
         $(this).closest(".input-pair").removeClass("invalid").addClass("valid");
       } else {
         $(this).closest(".input-pair").removeClass("valid").addClass("invalid");
+      }
+    });
+
+    // when an input changes, check if all required inputs are valid, and if they are enable the submit button
+    $("[data-required]").on("input change", function () {
+      let all_valid = true;
+      $("[data-required]").each(function () {
+        if ($(this).hasClass("invalid")) {
+          all_valid = false;
+        }
+        // if the input is empty, it is invalid, or if it is a radio group and none of the radios are checked
+        else if (!$(this).find("input").val() || ($(this).find("input[type='radio']").length && !$(this).find("input[type='radio']:checked").length)) {
+          all_valid = false;
+        }
+        if (!$(this).find("input").val()) {
+          all_valid = false;
+        }
+      });
+      if (all_valid) {
+        $("input[type='submit']").prop("disabled", false);
+      } else {
+        $("input[type='submit']").prop("disabled", true);
       }
     });
   </script>
