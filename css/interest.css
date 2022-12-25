@@ -36,15 +36,18 @@ a[href]::after {
   padding-left: 1em;
   text-decoration: none !important;
 }
-
+#page-content {
+  max-width: 680px !important;
+  padding: 0 !important;
+}
 form {
   width: 100%;
-  margin-top: 20px;
 }
 
 body {
   align-items: start;
   font-family: Roboto, Helvetica, Arial, sans-serif;
+  padding: 0 !important;
 }
 .input-pair {
   display: flex;
@@ -140,7 +143,7 @@ input[type="number"]:focus + .input-border {
 }
 /* style submit button like google forms one */
 input[type="submit"] {
-  margin: 10px;
+  margin: 20px;
   margin-top: 0;
   width: fit-content;
   padding: 10px 30px;
@@ -164,6 +167,12 @@ input[type="submit"]:disabled {
 @media (min-width: 360px) {
   input[type="submit"] {
     /* fill width and change display */
+  }
+}
+@media (max-width: 500px) {
+  /* resize the top text */
+  .page-title {
+    font-size: 40px !important;
   }
 }
 /* input:-internal-autofill-selected {
@@ -332,4 +341,25 @@ input[type="radio"]:checked + label > .radio:hover::after {
 #info-box-contents {
   padding: 20px;
   margin-top: calc(0 - var(--bar-height));
+}
+/* custom scrollbar for webkit, rounded with spacing */
+::-webkit-scrollbar {
+  width: 20px;
+  height: 20px;
+  border-radius: 0;
+  background-color: #252423;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #ffffff40;
+  /* add border to add space */
+  border: solid 5px #252423;
+  width: 5px;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #fce5bc40;
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: #e0b57440;
 }

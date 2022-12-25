@@ -42,8 +42,26 @@
         </div>
         <div class="input-pair">
           <label for="age">Age Group</label>
-          <input type="number" id="age" min="5" max="115" />
-          <div class="input-border"></div>
+          <div class="radio-group">
+            <input type="radio" name="interest-source" id="age-18plus" />
+            <label for="age-18plus">
+              <span class="radio"></span>
+              <span class="radio-label">18 or above</span>
+            </label>
+          </div>
+          <div class="radio-group">
+            <input type="radio" name="interest-source" id="age-under18" />
+            <label for="age-under18">
+              <span class="radio"></span>
+              <span class="radio-label"
+                ><span class="radio-label-text">Under 18:&nbsp;</span>
+                <div>
+                  <input type="number" id="age" min="5" max="17" id="under18age" />
+                  <div class="input-border"></div>
+                </div>
+              </span>
+            </label>
+          </div>
         </div>
         <div class="input-pair" data-required>
           <label for="experience">Previous Go Experience</label>
