@@ -45,9 +45,10 @@ form {
 }
 
 body {
-  align-items: start;
+  align-items: center;
   font-family: Roboto, Helvetica, Arial, sans-serif;
   padding: 0 !important;
+  flex-direction: column;
 }
 .input-pair {
   display: flex;
@@ -55,7 +56,6 @@ body {
   justify-content: space-between;
   padding: 20px;
   border-radius: 8px;
-  background-color: #ffffff22;
   background-color: #14141440;
   backdrop-filter: blur(10px);
   margin: 20px;
@@ -392,4 +392,37 @@ input[type="radio"]:checked + label > .radio:hover::after {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+/* footer */
+footer {
+  height: 50px;
+  width: 100%;
+  flex-shrink: 0;
+  background: #5c5950;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #cccccc;
+}
+.footer-item {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 25px;
+  height: 100%;
+  width: 50px;
+}
+#instagram-link {
+  background-image: url(../img/footer/instagram.png);
+}
+#facebook-link {
+  background-image: url(../img/footer/facebook.png);
+}
+footer span {
+  padding: 0 10px;
+}
+div.footer-item {
+  filter: invert(1);
 }
