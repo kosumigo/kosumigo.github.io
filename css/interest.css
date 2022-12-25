@@ -346,7 +346,7 @@ input[type="radio"]:checked + label > .radio:hover::after {
 }
 /* custom scrollbar for webkit, rounded with spacing */
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 16px;
   height: 20px;
   border-radius: 0;
   background-color: #252423;
@@ -355,7 +355,7 @@ input[type="radio"]:checked + label > .radio:hover::after {
   border-radius: 10px;
   background-color: #ffffff40;
   /* add border to add space */
-  border: solid 5px #252423;
+  border: solid 4px #252423;
   width: 5px;
   box-sizing: border-box;
 }

@@ -18,7 +18,6 @@ function checkPairResponse(el) {
     return false;
   } else if ($(el).children("input").length && !$(el).children("input").val()) {
     return false;
-    console.log();
   }
   return true;
 }
@@ -39,9 +38,7 @@ $("[data-required]").on("input change", function () {
     $("input[type='submit']").addClass("disabled");
   } else {
     $(this).css("border-color", "");
-    let invalid_parents = checkResponse();
-    console.log("invalid parents", invalid_parents);
-    if (!invalid_parents.length) {
+    if (!checkResponse().length) {
       $("input[type='submit']").removeClass("disabled");
     } else {
       $("input[type='submit']").addClass("disabled");
@@ -66,7 +63,9 @@ $("form").on("submit", (e) => {
         $(parent).css({ "border-color": "#e5573480" });
       }, 600);
     });
+    new WarningToast("Please fill out all required fields", 3000);
   } else {
     console.log("form submitted");
+    new Toast("Response submitted! We'll reach out to you soon!", "default", 3000, "/img/icon/toast/success-icon.svg", "/");
   }
 });

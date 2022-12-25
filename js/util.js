@@ -48,12 +48,12 @@ class Toast {
 class ErrorToast extends Toast {
   constructor(message, err, duration, action = "") {
     message += ": " + err;
-    super(message, "default", duration, "//sander.vonk.one/FocusTime/img/icon/toast/error-icon.svg", action);
+    super(message, "default", duration, "/img/icon/toast/error-icon.svg", action);
   }
 }
 class WarningToast extends Toast {
   constructor(message, duration, action = "") {
-    super(message, "default", duration, "//sander.vonk.one/FocusTime/img/icon/toast/warning-icon.svg", action);
+    super(message, "default", duration, "/img/icon/toast/warning-icon.svg", action);
   }
 }
 /** POPUP **/
