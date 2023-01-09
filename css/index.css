@@ -518,7 +518,7 @@ form > * {
   box-sizing: border-box;
   background-color: var(--bg);
   /* background-image: url(../img/accents.svg); */
-  background-image: url(../img/accents.png);
+  background-image: url(../img/accents.webp);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -923,7 +923,7 @@ footer span {
   max-width: calc(500px + 5vw);
   pointer-events: all;
   animation: prompt-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-  background-image: url(../img/prompt-accents.png);
+  background-image: url(../img/prompt-accents.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
