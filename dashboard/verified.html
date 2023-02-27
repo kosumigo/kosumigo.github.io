@@ -12,18 +12,30 @@
     <meta name="apple-mobile-web-app-status-bar" content="#141414" />
     <meta name="theme-color" content="#141414" />
     <!-- Search Engine -->
-    <meta name="description" content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!" />
+    <meta
+      name="description"
+      content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!"
+    />
     <!-- Schema.org for Google -->
     <meta itemprop="name" content="Kosumi Go School" />
-    <meta itemprop="description" content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!" />
+    <meta
+      itemprop="description"
+      content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!"
+    />
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Kosumi Go School" />
-    <meta name="twitter:description" content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!" />
+    <meta
+      name="twitter:description"
+      content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!"
+    />
     <meta name="twitter:image:src" content="//kosumigo.github.io//social-img/social-twitter.png" />
     <!-- Open Graph general (Facebook, Pinterest & Google+) -->
     <meta name="og:title" content="Kosumi Go School" />
-    <meta name="og:description" content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!" />
+    <meta
+      name="og:description"
+      content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!"
+    />
     <meta name="og:image" content="//kosumigo.github.io//social-img/social-og.png" />
     <meta name="og:url" content="//kosumigo.github.io//" />
     <meta name="og:site_name" content="Kosumi | Home" />
@@ -35,7 +47,7 @@
         "name": "Kosumi Go School",
         "alternateName": "Kosumi",
         "url": "https://kosumigo.github.io/",
-        "logo": "https://sander.vonk.one/VITE/img/icon/app/icon-512x512.png",
+        "logo": "https://sandervonk.github.io/VITE/img/icon/app/icon-512x512.png",
         "contactPoint": {
           "@type": "ContactPoint",
           "email": "kosumigo@gmail.com",
@@ -43,7 +55,12 @@
           "areaServed": "US",
           "availableLanguage": ["en", "Chinese (Simplified)", "Chinese (Traditional)"]
         },
-        "sameAs": ["https://kosumigo.github.io/", "http://github.com/kosumigo", "https://www.instagram.com/kosumigoschool/", "https://www.facebook.com/profile.php?id=100081977831709"]
+        "sameAs": [
+          "https://kosumigo.github.io/",
+          "http://github.com/kosumigo",
+          "https://www.instagram.com/kosumigoschool/",
+          "https://www.facebook.com/profile.php?id=100081977831709"
+        ]
       }
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -62,7 +79,14 @@
   <body class="flex-column flex-center">
     <noscript>
       <div class="toast-overlay" style="animation: fadeIn 0.5s forwards"></div>
-      <div class="toast default" style="animation: slideIn 0.5s forwards"><img loading="lazy" src="/img/icon/toast/error-icon.svg" class="toast-icon" alt="Toast Popup Icon" />Sorry, Javascript must be enabled for this page to work properly</div>
+      <div class="toast default" style="animation: slideIn 0.5s forwards">
+        <img
+          loading="lazy"
+          src="/img/icon/toast/error-icon.svg"
+          class="toast-icon"
+          alt="Toast Popup Icon"
+        />Sorry, Javascript must be enabled for this page to work properly
+      </div>
     </noscript>
     <div id="onboard-container" class="flex-column">
       <div id="org-title" class="flex-row flex-nowrap flex-center" href="/">
@@ -72,22 +96,42 @@
       <form id="reset-box" class="flex-column" action="/dashboard/">
         <div data-auth-role="verified-part" class="flex-column">
           <!-- <object id="small-art-icon" type="image/svg+xml" data="../img/icon/small-art/Letter-Alt.svg"> -->
-          <img loading="lazy" id="small-art-icon" src="../img/icon/small-art/Letter-Alt.png" alt="Reset Icon" />
+          <img
+            loading="lazy"
+            id="small-art-icon"
+            src="../img/icon/small-art/Letter-Alt.png"
+            alt="Reset Icon"
+          />
           <!-- </object> -->
           <div id="reset-text" class="fill-width">
             <div class="reset-text-primary">Verifying Email</div>
-            <div class="reset-text-secondary" style="margin-bottom: 0">Please wait a moment while we update your account details. Please do not close this tab</div>
+            <div class="reset-text-secondary" style="margin-bottom: 0">
+              Please wait a moment while we update your account details. Please do not close this
+              tab
+            </div>
           </div>
         </div>
         <div data-auth-role="verified-part" class="flex-column" style="display: none">
           <!-- <object id="small-art-icon" type="image/svg+xml" data="../img/icon/small-art/Letter.svg"> -->
-          <img loading="lazy" id="small-art-icon" src="../img/icon/small-art/Letter.png" alt="Reset Icon" />
+          <img
+            loading="lazy"
+            id="small-art-icon"
+            src="../img/icon/small-art/Letter.png"
+            alt="Reset Icon"
+          />
           <!-- </object> -->
           <div id="reset-text" class="fill-width">
             <div class="reset-text-primary">Email verified</div>
-            <div class="reset-text-secondary">You can continue to the dashboard or close this page</div>
+            <div class="reset-text-secondary">
+              You can continue to the dashboard or close this page
+            </div>
           </div>
-          <input data-auth-role="to-dashboard" id="to-dashboard-button" type="button" value="Go to dashboard" />
+          <input
+            data-auth-role="to-dashboard"
+            id="to-dashboard-button"
+            type="button"
+            value="Go to dashboard"
+          />
         </div>
       </form>
     </div>

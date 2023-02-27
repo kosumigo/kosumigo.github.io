@@ -12,18 +12,30 @@
     <meta name="apple-mobile-web-app-status-bar" content="#141414" />
     <meta name="theme-color" content="#141414" />
     <!-- Search Engine -->
-    <meta name="description" content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!" />
+    <meta
+      name="description"
+      content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!"
+    />
     <!-- Schema.org for Google -->
     <meta itemprop="name" content="Kosumi Go School" />
-    <meta itemprop="description" content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!" />
+    <meta
+      itemprop="description"
+      content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!"
+    />
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Kosumi Go School" />
-    <meta name="twitter:description" content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!" />
+    <meta
+      name="twitter:description"
+      content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!"
+    />
     <meta name="twitter:image:src" content="//kosumigo.github.io//social-img/social-twitter.png" />
     <!-- Open Graph general (Facebook, Pinterest & Google+) -->
     <meta name="og:title" content="Kosumi Go School" />
-    <meta name="og:description" content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!" />
+    <meta
+      name="og:description"
+      content="Bringing fun and fulfilling student-led Go classes to Bay Area students starting Summer 2022!"
+    />
     <meta name="og:image" content="//kosumigo.github.io//social-img/social-og.png" />
     <meta name="og:url" content="//kosumigo.github.io//" />
     <meta name="og:site_name" content="Kosumi | Home" />
@@ -35,7 +47,7 @@
         "name": "Kosumi Go School",
         "alternateName": "Kosumi",
         "url": "https://kosumigo.github.io/",
-        "logo": "https://sander.vonk.one/VITE/img/icon/app/icon-512x512.png",
+        "logo": "https://sandervonk.github.io/VITE/img/icon/app/icon-512x512.png",
         "contactPoint": {
           "@type": "ContactPoint",
           "email": "kosumigo@gmail.com",
@@ -43,7 +55,12 @@
           "areaServed": "US",
           "availableLanguage": ["en", "Chinese (Simplified)", "Chinese (Traditional)"]
         },
-        "sameAs": ["https://kosumigo.github.io/", "http://github.com/kosumigo", "https://www.instagram.com/kosumigoschool/", "https://www.facebook.com/profile.php?id=100081977831709"]
+        "sameAs": [
+          "https://kosumigo.github.io/",
+          "http://github.com/kosumigo",
+          "https://www.instagram.com/kosumigoschool/",
+          "https://www.facebook.com/profile.php?id=100081977831709"
+        ]
       }
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -62,7 +79,14 @@
   <body class="flex-column flex-center">
     <noscript>
       <div class="toast-overlay" style="animation: fadeIn 0.5s forwards"></div>
-      <div class="toast default" style="animation: slideIn 0.5s forwards"><img loading="lazy" src="/img/icon/toast/error-icon.svg" class="toast-icon" alt="Toast Popup Icon" />Sorry, Javascript must be enabled for this page to work properly</div>
+      <div class="toast default" style="animation: slideIn 0.5s forwards">
+        <img
+          loading="lazy"
+          src="/img/icon/toast/error-icon.svg"
+          class="toast-icon"
+          alt="Toast Popup Icon"
+        />Sorry, Javascript must be enabled for this page to work properly
+      </div>
     </noscript>
     <div id="onboard-container" class="flex-column">
       <div id="org-title" class="flex-row flex-nowrap flex-center" href="/">
@@ -71,27 +95,61 @@
       </div>
       <form id="reset-box" class="flex-column">
         <!-- <object id="small-art-icon" type="image/svg+xml" data="../img/icon/small-art/Keychain.svg"> -->
-        <img loading="lazy" id="small-art-icon" src="../img/icon/small-art/Keychain.png" alt="Reset Icon" />
+        <img
+          loading="lazy"
+          id="small-art-icon"
+          src="../img/icon/small-art/Keychain.png"
+          alt="Reset Icon"
+        />
         <!-- </object> -->
         <div id="reset-text" class="fill-width">
           <div class="reset-text-primary">Reset your password</div>
         </div>
         <div class="input-pair flex-row flex-nowrap">
-          <object title="New Password" class="input-icon" data="../img/icon/login/password.svg" type="image/svg+xml">
+          <object
+            title="New Password"
+            class="input-icon"
+            data="../img/icon/login/password.svg"
+            type="image/svg+xml"
+          >
             <img loading="lazy" src="../img/icon/login/password.png" />
           </object>
-          <input data-auth-role="password-input" type="password" name="password" id="password-input" placeholder="Password" />
+          <input
+            data-auth-role="password-input"
+            type="password"
+            name="password"
+            id="password-input"
+            placeholder="Password"
+          />
         </div>
         <div class="input-pair flex-row flex-nowrap">
-          <object title="Confirm New Password" class="input-icon" data="../img/icon/login/password.svg" type="image/svg+xml">
+          <object
+            title="Confirm New Password"
+            class="input-icon"
+            data="../img/icon/login/password.svg"
+            type="image/svg+xml"
+          >
             <img loading="lazy" src="../img/icon/login/password.png" />
           </object>
-          <input data-auth-role="confirm-password-input" type="password" name="confirm-password" id="confirm-password-input" placeholder="Confirm password" />
+          <input
+            data-auth-role="confirm-password-input"
+            type="password"
+            name="confirm-password"
+            id="confirm-password-input"
+            placeholder="Confirm password"
+          />
         </div>
         <div id="reset-text" class="fill-width">
-          <div class="reset-text-secondary">Minimum 8 characters. Must contain upper and lowercase letters, numbers, and symbols</div>
+          <div class="reset-text-secondary">
+            Minimum 8 characters. Must contain upper and lowercase letters, numbers, and symbols
+          </div>
         </div>
-        <input data-auth-role="reset-password" id="reset-password-button" type="button" value="Reset my password" />
+        <input
+          data-auth-role="reset-password"
+          id="reset-password-button"
+          type="button"
+          value="Reset my password"
+        />
       </form>
     </div>
   </body>
