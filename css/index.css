@@ -529,7 +529,7 @@ form > * {
 .storyline-section {
   padding-top: 104px !important;
   padding: 70px 110px;
-  width: calc(100% / 3);
+  width: calc(100% / 4);
   display: flex;
   flex-flow: column;
   box-sizing: border-box;
