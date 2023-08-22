@@ -145,7 +145,7 @@ header {
   background-clip: text;
   text-fill-color: transparent;
   font-weight: 800;
-  max-width: 700px;
+  max-width: 850px;
 }
 .accented-style-dark {
   background: linear-gradient(93.8deg, hsl(29, 100%, 45%) 0%, hsl(51, 100%, 45%) 94.44%, hsla(61, 100%, 45%, 0.7) 94.44%);
@@ -551,6 +551,9 @@ form > * {
 }
 [section="team-section"] > #storylines-container {
   left: -200%;
+}
+[section="events-section"] > #storylines-container {
+  left: -300%;
 }
 #meetings-storyline {
   /* background-color: var(--bg); */
