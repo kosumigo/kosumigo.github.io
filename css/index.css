@@ -539,7 +539,7 @@ form > * {
   flex-flow: row nowrap;
   align-items: stretch;
   justify-content: start;
-  width: 300%;
+  width: 400%;
   position: relative;
   transition: left 0.25s ease-out;
 }
