@@ -154,7 +154,7 @@ header {
   background-clip: text;
   text-fill-color: transparent;
   font-weight: 800;
-  max-width: 700px;
+  max-width: 850px;
 }
 .accented-text {
   font-size: 64px;
@@ -539,7 +539,7 @@ form > * {
   flex-flow: row nowrap;
   align-items: stretch;
   justify-content: start;
-  width: 400%;
+  width: 500%;
   position: relative;
   transition: left 0.25s ease-out;
 }
@@ -554,6 +554,9 @@ form > * {
 }
 [section="events-section"] > #storylines-container {
   left: -300%;
+}
+[section="join-section"] > #storylines-container {
+  left: -400%;
 }
 #meetings-storyline {
   /* background-color: var(--bg); */
@@ -880,6 +883,16 @@ footer span {
   content: '"';
   font-weight: bold;
   color: var(--lower-accent);
+}
+
+#bottom-content-container {
+  position: relative;
+  min-height: 550px;
+}
+#bottom-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 /** PROMPT **/
